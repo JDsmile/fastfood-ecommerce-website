@@ -1,0 +1,15 @@
+@import "../../colors";
+
+.header-container{
+    background-color: $brand;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+
+    .message{
+        color:white;
+        opacity: 0.8;
+        text-align: center;
+        padding:1em;
+        
+    }
+}

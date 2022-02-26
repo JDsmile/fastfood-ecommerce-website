@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACCA,OAAO,CAAC,+EAAI;ADCZ,AAAA,iBAAiB,CAAA;EACb,gBAAgB,ECAZ,OAAO;EDCX,WAAW,EAAE,mBAAmB;EAChC,KAAK,EAAE,IAAI;CASd;;AAZD,AAKI,iBALa,CAKb,QAAQ,CAAA;EACJ,KAAK,EAAC,KAAK;EACX,OAAO,EAAE,GAAG;EACZ,UAAU,EAAE,MAAM;EAClB,OAAO,EAAC,GAAG;CAEd",
+    "sources": [
+        "Header.scss",
+        "../../_colors.scss"
+    ],
+    "names": [],
+    "file": "Header.css"
+}
