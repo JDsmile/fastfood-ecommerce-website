@@ -53,7 +53,7 @@
     }
 
     .mobile-nav-container{
-        background-color: $brand;
+        background-color: lightgray;
         padding: 13px;
         border-radius: 5px;
         width: 50px;
@@ -67,6 +67,7 @@
 
         .mobile-nav-toggle{
             width: 20px;
+            color: black;
         }
 
         .mobile-nav{

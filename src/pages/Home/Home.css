@@ -4,11 +4,16 @@
   font-family: 'Inter', sans-serif;
 }
 
-.hero {
-  padding: 20px;
+.intro {
+  padding-bottom: 10px;
+  padding-top: 7em;
+  background-image: url(../../assets/bg-1.svg);
+  background-size: cover;
+  margin-bottom: 3em;
 }
 
 .intro .hero-h1 {
+  padding: 0 20px;
   font-size: 3rem;
   font-weight: bolder;
   line-height: 1.1;
@@ -44,7 +49,7 @@
 }
 
 .review-text {
-  margin-bottom: 5em;
+  margin-bottom: 2em;
 }
 
 .review-text span {
@@ -57,7 +62,7 @@
 }
 
 .content {
-  background-image: url(../../assets/bg-1.svg);
+  background-image: url(../../assets/bg-3.png), url(../../assets/bg-1.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
