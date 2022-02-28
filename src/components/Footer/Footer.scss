@@ -1,0 +1,62 @@
+@import "../../colors";
+
+.footer-container{
+
+    background-color: #f5fbfc;
+    text-align: left;
+    padding: 4em 20px;
+    padding-bottom: 20px;
+    img{
+        width: 8%;
+        margin-bottom: 2em;
+    }
+    .footer-title{
+        color: $paragraph;
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 3em;
+    }
+   
+}
+
+
+.footer-right{
+
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 2em;
+    p{
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 2px;
+        margin-bottom: 2em;
+    }
+
+    ul{
+        padding: 0;
+        li{
+            list-style-type: none;
+            margin-bottom: 1em;
+            color: $paragraph;
+        }
+    }
+}
+
+.social-list{
+
+    width: 100%;
+    ul{
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 18px;
+
+        &>*{
+            padding: 10px;
+            color: $paragraph;
+            border: 1px solid lightgray;
+            border-radius: 50%;
+        }
+    }
+
+}

@@ -1,12 +1,18 @@
 @import "../../colors";
+
+@mixin tablet {
+    @media (max-width:768px){@content}
+}
+
 .nav-wrap{
     padding:1.5em;
     display: flex;
     justify-content: space-between;
     font-family: 'Inter', sans-serif;
-    max-width: 1440px;
+    max-width: 1200px;
     margin: 0 auto;
     // width: 100%;
+    position: relative;
 }
 .logo{
     width: 40px; 
@@ -18,11 +24,15 @@
     justify-content: center;
     align-items: center;
     
-    
-    ul{
+    .desktop-menu{
         display: flex;
         justify-content: center;
         align-items: center;
+        
+
+        @include tablet(){
+            display: none;
+        }
 
         & > * {
             text-decoration: none;
@@ -42,9 +52,94 @@
         }
     }
 
+    .mobile-nav-container{
+        background-color: $brand;
+        padding: 13px;
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+        margin-left: 0.75em;
+        display: none;
+
+        @include tablet(){
+            display: block;
+        }
+
+        .mobile-nav-toggle{
+            width: 20px;
+        }
+
+        .mobile-nav{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            margin-top: 2em;
+            background-color: lightcyan;
+            z-index: 5;
+            animation-name: slideDown;
+            animation-duration: 0.3s;
+            animation-timing-function: ease-in-out;	
+            & > * {
+                text-decoration: none;
+                
+            }
+
+            li{
+                list-style-type: none; 
+                font-size: 16px;
+                margin-bottom: 2em;
+            }
+
+        }
+    }
+
 }
 
 .active-tab{
     color: $brand;
 
+}
+
+.img-container{
+    padding:13px;
+    background-color: $brand;
+    border-radius: 5px;
+    margin-left: 0.75em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .cart-quantity{
+        position: absolute;
+        top:-10px;
+        right: -10px;
+        padding: 5px;
+        color: $brand;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        font-weight: bold;
+    }
+
+    .cart{
+        width: 25px;
+        color: white;
+    }
+    
+}
+
+
+@keyframes slideDown {
+	0% {
+		transform: translateX(100%);
+	}
+	100%{
+		transform: translateY(0);
+	}
 }
