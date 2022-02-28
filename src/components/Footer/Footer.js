@@ -23,7 +23,7 @@ export default function Footer(){
                    <li>Contact</li>  
                </ul>
            </div>
-
+           
            <div className="social-list">
                <ul>
                 <FontAwesomeIcon icon={faTwitter} className="social-icon"/>

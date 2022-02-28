@@ -70,7 +70,7 @@
 }
 
 .nav-links .mobile-nav-container {
-  background-color: #35B8BE;
+  background-color: lightgray;
   padding: 13px;
   border-radius: 5px;
   width: 50px;
@@ -87,6 +87,7 @@
 
 .nav-links .mobile-nav-container .mobile-nav-toggle {
   width: 20px;
+  color: black;
 }
 
 .nav-links .mobile-nav-container .mobile-nav {
