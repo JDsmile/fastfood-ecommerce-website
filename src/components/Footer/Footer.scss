@@ -1,6 +1,9 @@
 @import "../../colors";
 
 .footer-container{
+    background-image: url(../../assets/bg-2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
 
     background-color: #f5fbfc;
     text-align: left;
@@ -15,10 +18,8 @@
         font-size: 18px;
         line-height: 1.4;
         margin-bottom: 3em;
-    }
-   
+    }  
 }
-
 
 .footer-right{
 
