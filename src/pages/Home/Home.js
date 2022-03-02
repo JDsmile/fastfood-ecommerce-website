@@ -16,7 +16,7 @@ import Footer from "../../components/Footer/Footer"
 
 export default function Home(){
     return(
-        
+
         <div className="home-container">
 
             <div className="hero flex-container">
@@ -35,12 +35,12 @@ export default function Home(){
                 </div>
 
                 <div className="hero-img-wrap">
-                    <img src={Image1} alt="" />
+                    <img src={Image1} alt="" className="img"/>
                 </div>
             </div>
 
             <div className="content flex-container">
-                <div>
+                <div className="intro">
                     <h2 className="content-title">The home of fresh products</h2>
                     <p  className="content-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, delectus doloremque quod consectetur quaerat a ratione, ipsam itaque ea ut vel, explicabo vitae vero et!</p>
 
@@ -48,26 +48,28 @@ export default function Home(){
                 </div>
 
                 <div>
-                    <img src={Image2} alt="" />
+                    <img src={Image2} alt="" className="img"/>
                 </div>
             </div>
 
             <div className="content-show flex-container">
                 <h2 className="content-title">How it works.</h2>
 
-                <div className="content-items">
+                <div className="content-items flex-container">
                     <div className="item flex-container">
-                        <img src={Image3} alt="" />
+                        <img src={Image3} alt="" className="img"/>
                         <h4 className="info-title">Adapt your menu items</h4>
                         <p className="content-info">Easily adapt your menu using the webflow CMS and allow customers to browsw your items</p>
                     </div>
+
                     <div className="item flex-container">
-                        <img src={Image4} alt="" />
+                        <img src={Image4} alt="" className="img"/>
                         <h4 className="info-title">Accpet online orders & takeout</h4>
                         <p className="content-info">Let your customers order and pay via the powerful ecommerce system, or simple let them call your store.</p>
                     </div>
+                    
                     <div className="item flex-container">
-                        <img src={Image5} alt="" />
+                        <img src={Image5} alt="" className="img"/>
                         <h4 className="info-title">Manage delivery or takeout</h4>
                         <p className="content-info">Manage your own logistics and take orders simply through the ecommerce system.</p>
                     </div>
@@ -83,8 +85,8 @@ export default function Home(){
                 <button className="to-menu">See Full Menu</button>
             </div>
 
-            <div className="content-section">
-                <img src={Image6} alt="" />
+            <div className="content-section flex-container">
+                <img src={Image6} alt="" className="img"/>
 
                 <div className="info-title"> 
 
@@ -95,7 +97,7 @@ export default function Home(){
                 </div>
             </div>
 
-            <div className="content-section bg-brand">
+            <div className="content-section bg-brand flex-container">
          
                 <div className="info-title"> 
 
@@ -105,13 +107,13 @@ export default function Home(){
 
                 </div>
 
-                <img src={Image7} alt="" />
+                <img src={Image7} alt="" className="img"/>
             </div>
 
-            <div className="content-last">
+            <div className="content-last flex-container">
 
-                <div>
-                    <img src={Image8} alt="" />
+                <div className="img-content">
+                    <img src={Image8} alt="" className="img"/>
                 </div>
 
                 <div className="content-info">

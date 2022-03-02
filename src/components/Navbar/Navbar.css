@@ -10,6 +10,7 @@
   font-family: 'Inter', sans-serif;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
   position: relative;
 }
 
@@ -87,7 +88,6 @@
 
 .nav-links .mobile-nav-container .mobile-nav-toggle {
   width: 20px;
-  color: black;
 }
 
 .nav-links .mobile-nav-container .mobile-nav {

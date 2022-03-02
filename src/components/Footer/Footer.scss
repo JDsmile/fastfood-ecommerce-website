@@ -1,5 +1,13 @@
 @import "../../colors";
 
+@mixin tablet-screen {
+    @media (min-width:750px) {
+        @content
+        
+    }
+    
+}
+
 .footer-container{
     background-image: url(../../assets/bg-2.svg);
     background-repeat: no-repeat;
@@ -9,9 +17,21 @@
     text-align: left;
     padding: 4em 20px;
     padding-bottom: 20px;
+
+    @include tablet-screen(){
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 1em;
+    }
+
     img{
         width: 8%;
         margin-bottom: 2em;
+        @include tablet-screen(){
+            max-width: 20%;
+        }
     }
     .footer-title{
         color: $paragraph;
@@ -25,6 +45,11 @@
 
     border-bottom: 1px solid lightgray;
     margin-bottom: 2em;
+
+    @include tablet-screen(){
+        border: none;
+
+    }
     p{
         text-transform: uppercase;
         font-weight: 500;
@@ -45,6 +70,12 @@
 .social-list{
 
     width: 100%;
+    @include tablet-screen(){
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+    }
     ul{
 
         display: flex;
