@@ -1,7 +1,26 @@
 @import "../../colors";
 
 
+@mixin larger-screen {
+    @media (min-width:600px){
+        @content
+    }
+    
+};
 
+@mixin  desktop-screen {
+    @media (min-width:999px) {
+        @content
+    }
+    
+};
+
+@mixin gird {
+    @media (min-width:550px){
+        @content
+    }
+    
+};
 
 .hero-section{
     // z-index: 1000;
@@ -12,8 +31,21 @@
     background-image: url(../../assets/bg-3.png), url(../../assets/bg-1.svg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:  contain, cover;
     margin-bottom: 3em;
+
+    .hero-title{
+
+        @include desktop-screen(){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1440px;  
+            margin: 0 auto;
+            padding: 5em;
+        }
+    }
+  
   
     font-family: 'Inter', sans-serif;
     span{
@@ -23,6 +55,8 @@
 
     h1{
         font-size: 50px;
+        max-width: 600px;
+        margin: 0 auto;
     }
 }
 
@@ -33,12 +67,23 @@
 
     background-position: center;
     background-size: cover;
+
     background-repeat: no-repeat;
     background-attachment: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 
     .num{
-        font-size: 55px;
-        padding-bottom: 0.5em;
+        font-size: 5rem;
+        padding-bottom: 0.2em;
+        font-family: 'Inter', sans-serif;
+    }
+    img{
+        margin-bottom: 2em;
+        max-width: 80px;
+       
     }
 }
 .section-title{
@@ -48,6 +93,14 @@
     font-family: 'Inter', sans-serif;
     margin-bottom: 0.5em;
 
+    @include desktop-screen(){
+           
+      
+        max-width: 450px;
+        font-size: 55px;
+        text-align: left;
+    }   
+
 }
 .section-para{
     text-align: center;
@@ -56,8 +109,14 @@
     color: $paragraph;
 
     width: 100%;
+
     margin-bottom: 1em;
     line-height: 1.4;
+    @include desktop-screen(){
+           
+       max-width: 500px;
+       text-align: left;
+    }
 }
 
 .primary-btn{
@@ -76,9 +135,62 @@
 
 .main-content{
     text-align: center;
+    font-family: 'Inter', sans-serif;
     img{
         max-width: 90%;
         margin-bottom: 3em;
+    }
+}
+
+.content-section{
+    padding: 3em;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+
+    p{
+        font-size: 22px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3em;
+        @include larger-screen(){
+            max-width: 600px;
+        }
+
+     
+        
+    }
+    @include larger-screen(){
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100vw;
+
+    }
+
+    @include desktop-screen(){
+        text-align: left;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100vw;
+
+  
+    }
+
+}
+
+.grid{
+
+    @include gird(){
+        display: grid;
+        // wi   dth: 100vw;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop-screen(){
+        display: flex;
+
     }
 }
 
