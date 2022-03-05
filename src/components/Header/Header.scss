@@ -3,18 +3,19 @@
 .header-container{
     background-color: $brand;
     font-family: 'Inter', sans-serif;
-    width: 100%;
+    min-width: 100%;
+    
 
     .message{
         color:white;
         opacity: 0.8;
         text-align: center;
         padding:1em;
+        display: none;
 
 
-        @media (max-width:500px) {
-            display: none;
-            
+        @media (min-width:500px) {
+            display: block;
         }
         
     }

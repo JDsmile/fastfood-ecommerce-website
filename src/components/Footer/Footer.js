@@ -6,6 +6,7 @@ import {faTwitter,faInstagram,faYoutube} from "@fortawesome/free-brands-svg-icon
 
 export default function Footer(){
     return(
+        <>
        <div className="footer-container">
 
            <div className="footer-left">
@@ -23,14 +24,15 @@ export default function Footer(){
                    <li>Contact</li>  
                </ul>
            </div>
-           
-           <div className="social-list">
-               <ul>
+        </div>
+
+        <div className="social-list">
+            <ul>
                 <FontAwesomeIcon icon={faTwitter} className="social-icon"/>
                 <FontAwesomeIcon icon={faInstagram} className="social-icon"/>
                 <FontAwesomeIcon icon={faYoutube} className="social-icon"/>
-               </ul>
-           </div>
-       </div>
+            </ul>
+        </div>
+        </>
     )
 }
