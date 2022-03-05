@@ -1,0 +1,85 @@
+@import "../../colors";
+
+
+
+
+.hero-section{
+    // z-index: 1000;
+    background-color: white;
+    margin-top: 3em;
+    text-align: center;
+    padding:  25px  20px 7em 20px;
+    background-image: url(../../assets/bg-3.png), url(../../assets/bg-1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 3em;
+  
+    font-family: 'Inter', sans-serif;
+    span{
+        color: $brand;
+    }
+
+
+    h1{
+        font-size: 50px;
+    }
+}
+
+.static-content{
+    background-image: url(../../assets/co-bg.jpeg);
+    text-align: center;
+    color: white;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    .num{
+        font-size: 55px;
+        padding-bottom: 0.5em;
+    }
+}
+.section-title{
+    color: $brand;
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 0.5em;
+
+}
+.section-para{
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    color: $paragraph;
+
+    width: 100%;
+    margin-bottom: 1em;
+    line-height: 1.4;
+}
+
+.primary-btn{
+    padding: 20px 35px;
+    background-color: $brand;
+    border: none;
+    border-radius: 10px;
+    // margin:0 auto;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 5em;
+
+}
+
+.main-content{
+    text-align: center;
+    img{
+        max-width: 90%;
+        margin-bottom: 3em;
+    }
+}
+
+

@@ -1,1 +1,76 @@
-/* No CSS *//*# sourceMappingURL=Company.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+.hero-section {
+  background-color: white;
+  margin-top: 3em;
+  text-align: center;
+  padding: 25px  20px 7em 20px;
+  background-image: url(../../assets/bg-3.png), url(../../assets/bg-1.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 3em;
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-section span {
+  color: #35B8BE;
+}
+
+.hero-section h1 {
+  font-size: 50px;
+}
+
+.static-content {
+  background-image: url(../../assets/co-bg.jpeg);
+  text-align: center;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.static-content .num {
+  font-size: 55px;
+  padding-bottom: 0.5em;
+}
+
+.section-title {
+  color: #35B8BE;
+  text-align: center;
+  font-size: 45px;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 0.5em;
+}
+
+.section-para {
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  color: #546285;
+  width: 100%;
+  margin-bottom: 1em;
+  line-height: 1.4;
+}
+
+.primary-btn {
+  padding: 20px 35px;
+  background-color: #35B8BE;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 5em;
+}
+
+.main-content {
+  text-align: center;
+}
+
+.main-content img {
+  max-width: 90%;
+  margin-bottom: 3em;
+}
+/*# sourceMappingURL=Company.css.map */
