@@ -25,13 +25,15 @@ export default function Company(){
                     <p className="section-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente explicabo officiis quasi ipsum vel ipsam sequi eligendi eius at. Sed?</p>
                     <button className="primary-btn">Learn about us</button>
                 </div>
+
+                <img src={img} alt="" />
             </div>
 
-            <img src={img} alt="" />
+
         </div>
 
         <div className="static-content">
-            <div className="content-section">
+            <div className="content-section grid">
                 <div>
                     <h2 className="num">62</h2>
                     <img src={wave} alt="" />
