@@ -1,5 +1,6 @@
 import React from "react";
 import "./Faq.css"
+import faq from "../../data/faq.json"
 
 export default function Faq(){
     return(
