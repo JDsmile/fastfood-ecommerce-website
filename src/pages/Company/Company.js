@@ -8,9 +8,7 @@ import Footer from "../../components/Footer/Footer"
 export default function Company(){
 
     return(
-
         <>
-
 
         <div className="hero-section">
             <div className="hero-title">
@@ -28,7 +26,6 @@ export default function Company(){
 
                 <img src={img} alt="" />
             </div>
-
 
         </div>
 

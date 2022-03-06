@@ -181,10 +181,9 @@
 }
 
 .grid{
-
+    
     @include gird(){
         display: grid;
-        // wi   dth: 100vw;
         grid-template-columns: repeat(2, 1fr);
     }
 
