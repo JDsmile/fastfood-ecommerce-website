@@ -6,6 +6,7 @@ import plus from "../../assets/plus.svg"
 import btnBg from "../../assets/btn-bg.svg"
 
 
+
 export default function Faq(){
 
     const tabName =["Our Food", "Our Delivery", "Our Company"]
@@ -15,19 +16,22 @@ export default function Faq(){
     const [answerIndex,setAnswerIndex] = React.useState(0)
     const [expand,setExpand] = React.useState(false)
 
+    
     function toggleTab(value){
         setFaqTabe(faq[tabName[value]])
         setActiveTab(true)
         setTabIndex(value)
+        setExpand(false)
     }
-
+    
     //logic for display the answer
     function handleClick(value){
+        setAnswerIndex(value)
+        
         if(answerIndex===value || expand===false)
         {
             setExpand(!expand)
         } 
-        setAnswerIndex(value)
     }
 
     console.log(answerIndex)
