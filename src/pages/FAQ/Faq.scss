@@ -1,5 +1,12 @@
 @import "../../colors";
 
+@mixin table-size{
+    @media (min-width:750px) {
+        @content
+    }
+    
+}
+
 
 .hero{
     background-image: url(../../assets/bg-3.png), url(../../assets/bg-1.svg);
@@ -19,6 +26,12 @@
 
 .tab{
       margin-bottom: 3em;
+      max-width: 1100px;
+      margin: 0 auto;
+
+      @include table-size(){
+        display: flex;
+    }
 }
 
 .btn-container{
@@ -37,8 +50,17 @@
         margin-bottom: 0.75em;
         padding:0.75em 0;
         border-radius: 5px;
+        max-width: 250px;
 
+        @include table-size(){
+            font-size: 20px;
+            margin-bottom: 2em;
+        }
+        
+    }
 
+    @include table-size(){
+        width: 100%;
     }
 }
 
@@ -48,12 +70,16 @@
     background-image: url(../../assets/btn-bg.svg);
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 .faq{
 
     text-align: left;
     font-family: 'Inter', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 3em;
     ul{
         list-style-type: none;
         padding: 0 1em;
@@ -76,6 +102,7 @@
     }
     p{
         display: none;
+        margin-bottom: 3em;
     }
     .expand{
         display: block;

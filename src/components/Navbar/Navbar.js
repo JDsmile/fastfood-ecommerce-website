@@ -58,7 +58,7 @@ export default function Navbar(){
 
                         {navLinks.map((link,value)=>{
                             return(
-                              <Link to={link.to} onClick={()=>checkActive(value)} key={link.id}><li className={value===active? "active-tab": undefined}>{link.name}</li></Link>
+                              <Link to={link.to} onClick={()=>checkActive(value)} key={link.id}><li className={value===active? "active-menu": undefined}>{link.name}</li></Link>
                             )
                         })}
                     </ul>
