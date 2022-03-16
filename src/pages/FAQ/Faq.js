@@ -21,10 +21,18 @@ export default function Faq(){
         setTabIndex(value)
     }
 
+    //logic for display the answer
     function handleClick(value){
-        setExpand(!expand)
+        if(answerIndex===value || expand===false)
+        {
+            setExpand(!expand)
+        } 
         setAnswerIndex(value)
     }
+
+    console.log(answerIndex)
+    console.log(expand)
+
 
     return(
         <>
