@@ -1,0 +1,85 @@
+@import "../../colors";
+
+
+.hero{
+    background-image: url(../../assets/bg-3.png), url(../../assets/bg-1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  contain, cover;
+    text-align: center;
+    font-size: 25px;
+    padding:5em 0;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 3em;
+    
+    span{
+        color: $brand;
+    }
+}
+
+.tab{
+      margin-bottom: 3em;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+  
+    .tab-btn{
+        background-color: unset;
+        border-color: rgba(97, 114, 131, 0);
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        border: 1px solid gray;
+        width: 90%;
+        margin-bottom: 0.75em;
+        padding:0.75em 0;
+        border-radius: 5px;
+
+
+    }
+}
+
+.active-tab{
+    background-color: $brand !important;
+    color: white ;
+    background-image: url(../../assets/btn-bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.faq{
+
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    ul{
+        list-style-type: none;
+        padding: 0 1em;
+    }
+    li{
+        color: $brand;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        padding-bottom: 2em;
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 2em;
+        padding-right: 15px;
+
+    }
+    img{
+        opacity: 0.8;
+    }
+    p{
+        display: none;
+    }
+    .expand{
+        display: block;
+    }
+}
+
+
+

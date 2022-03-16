@@ -1,1 +1,92 @@
-/* No CSS *//*# sourceMappingURL=Faq.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+.hero {
+  background-image: url(../../assets/bg-3.png), url(../../assets/bg-1.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain, cover;
+  text-align: center;
+  font-size: 25px;
+  padding: 5em 0;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 3em;
+}
+
+.hero span {
+  color: #35B8BE;
+}
+
+.tab {
+  margin-bottom: 3em;
+}
+
+.btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-container .tab-btn {
+  background-color: unset;
+  border-color: rgba(97, 114, 131, 0);
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  border: 1px solid gray;
+  width: 90%;
+  margin-bottom: 0.75em;
+  padding: 0.75em 0;
+  border-radius: 5px;
+}
+
+.active-tab {
+  background-color: #35B8BE !important;
+  color: white;
+  background-image: url(../../assets/btn-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.faq {
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+}
+
+.faq ul {
+  list-style-type: none;
+  padding: 0 1em;
+}
+
+.faq li {
+  color: #35B8BE;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 18px;
+  padding-bottom: 2em;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 2em;
+  padding-right: 15px;
+}
+
+.faq img {
+  opacity: 0.8;
+}
+
+.faq p {
+  display: none;
+}
+
+.faq .expand {
+  display: block;
+}
+/*# sourceMappingURL=Faq.css.map */
