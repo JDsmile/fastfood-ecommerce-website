@@ -6,17 +6,23 @@ import TextField from '@mui/material/TextField';
 
 export default function Menu(){
     const [menuTab,setMenuTab] = React.useState(data.Burgers)
+    const [activeBtn,setActiveBtn] = React.useState(false)
+    const [tabIndex,setIndex] = React.useState(0)
 
     const menuList=["Burgers","Drinks","Sides"]
     
-    let handleClick = (value) =>{
-        if(value && value==="Burgers"){
+    let handleClick = (item,value) =>{
+
+        setIndex(value)
+        if(item && item==="Burgers"){
             setMenuTab(data.Burgers)
-        } else if(value && value==="Drinks"){
+        } else if(item && item==="Drinks"){
             setMenuTab(data.Drinks)
-        } else if(value && value==="Sides"){
+        } else if(item && item==="Sides"){
             setMenuTab(data.Sides)
         }
+        
+
     }
   
     return (
@@ -24,11 +30,13 @@ export default function Menu(){
         
         <div className="menu">
 
-            {menuList.map((item,value)=>{
-                return(
-                    <button className="menu-list-btn" onClick={()=>handleClick(item)}>{item}</button>
-                )
-            })}
+         <div className="btn-container">
+                {menuList.map((item,value)=>{
+                    return(
+                        <button className={`menu-list-btn ${value===tabIndex ? "active-btn": undefined}`} onClick={()=>handleClick(item,value)}>{item}</button>
+                        )
+                    })}
+            </div>
         
             {menuTab.map((item,value)=>{
                 return(

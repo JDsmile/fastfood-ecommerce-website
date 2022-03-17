@@ -34,9 +34,6 @@ export default function Faq(){
         } 
     }
 
-    console.log(answerIndex)
-    console.log(expand)
-
 
     return(
         <>
