@@ -1,0 +1,75 @@
+
+
+
+@import "../../colors";
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    font-family: 'Inter', sans-serif;
+}
+
+.menu-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgrey;
+    margin-bottom: 1em;
+    border-radius: 10px;
+   
+
+    .product-photo{
+        width: 300px;
+        margin: 0 auto;
+        margin-bottom: 1em;
+        margin-top: 1em;
+        border-radius: 10px;
+    }
+
+}
+
+.item-info-section{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.2em;
+    .item-name{
+        color: black;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    .item-info{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.5em;
+    }
+    .item-price{
+        color:$brand;
+        font-size: 16px;
+    }
+    .item-description{
+        color: $paragraph;
+        margin-bottom: 1em;
+    }
+
+}
+.sent-to-cart{
+    margin-bottom: 2em;
+    display: flex;
+
+    .input{
+        width: 60px;
+        margin-right: 10px;
+    }
+    .cart-btn{
+        background-color: #35B8BE;
+        color: white;
+        text-align: center;
+        padding: 0 20px;
+        border: none;
+        border-radius: 5px;
+    }
+}
