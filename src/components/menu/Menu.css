@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em;
+  font-family: 'Inter', sans-serif;
+}
+
+.menu-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid lightgrey;
+  margin-bottom: 1em;
+  border-radius: 10px;
+}
+
+.menu-item .product-photo {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border-radius: 10px;
+}
+
+.item-info-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 1.2em;
+}
+
+.item-info-section .item-name {
+  color: black;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.item-info-section .item-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 0.5em;
+}
+
+.item-info-section .item-price {
+  color: #35B8BE;
+  font-size: 16px;
+}
+
+.item-info-section .item-description {
+  color: #546285;
+  margin-bottom: 1em;
+}
+
+.sent-to-cart {
+  margin-bottom: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sent-to-cart .input {
+  width: 60px;
+  margin-right: 10px;
+}
+
+.sent-to-cart .cart-btn {
+  background-color: #35B8BE;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  border: none;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=Menu.css.map */
