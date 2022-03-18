@@ -2,19 +2,19 @@
     "Burgers":[
         {
             "name" : "Burger Dreams",
-            "price" : 9.2,
+            "price" : 9.20,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/burger-1.png"
         },
         {
             "name" : "Burger Waldo",
-            "price" : 10,
+            "price" : 10.00,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "image": "assets/burger-12.png"
+            "image": "assets/burger-2.png"
         },
         {
             "name" : "Burger Cali",
-            "price" : 8,
+            "price" : 8.00,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/burger-3.png"
         },
@@ -26,13 +26,13 @@
         },
         {
             "name" : "Burger Spicy",
-            "price" : 9.2,
+            "price" : 9.20,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/burger-5.png"
         },
         {
             "name" : "Burger Classic",
-            "price" : 8,
+            "price" : 8.00,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/burger-6.png"
         }
@@ -42,25 +42,25 @@
     "Sides":[
         {
             "name": "Salad Ceaser",
-            "price": 6,
+            "price": 6.00,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/sides-1.png"
         },
         {
             "name": "Beans Slow Cooked",
-            "price": 4,
+            "price": 4.00,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/sides-2.png"
         },
         {
             "name": "Fires Cheese",
-            "price": 5,
+            "price": 5.00,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/sides-3.png"
         },
         {
             "name": "Fries Rustic",
-            "price": 4,
+            "price": 4.00,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/sides-4.png"
         }
@@ -69,25 +69,25 @@
     "Drinks":[
         {
             "name": "Drink Fig & Lime",
-            "price":4,
+            "price":4.00,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/drink-1.png"
         },
         {
             "name": "Drink Liquor",
-            "price":7,
+            "price":7.00,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/drink-2.png"
         },
         {
             "name": "Drink Lime",
-            "price":4,
+            "price":4.00,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/drink-3.png"
         },
         {
             "name": "Drink Cola",
-            "price":3,
+            "price":3.00,
             "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "image": "assets/drink-4.png"
         }

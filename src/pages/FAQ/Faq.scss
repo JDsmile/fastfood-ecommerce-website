@@ -34,7 +34,7 @@
     }
 }
 
-.btn-container{
+.tab-btn-container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,6 +51,7 @@
         padding:0.75em 0;
         border-radius: 5px;
         max-width: 250px;
+
 
         @include table-size(){
             font-size: 20px;

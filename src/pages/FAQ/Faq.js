@@ -34,9 +34,6 @@ export default function Faq(){
         } 
     }
 
-    console.log(answerIndex)
-    console.log(expand)
-
 
     return(
         <>
@@ -49,7 +46,7 @@ export default function Faq(){
         <div className="tab">
             {tabName.map((tab,value)=>{
                 return(
-                    <div className="btn-container">
+                    <div className="tab-btn-container">
                         <button className={`tab-btn ${value===tabIndex ? "active-tab" : undefined}`}
                          onClick={()=>toggleTab(value)}>
                             {tab}

@@ -6,17 +6,23 @@ import TextField from '@mui/material/TextField';
 
 export default function Menu(){
     const [menuTab,setMenuTab] = React.useState(data.Burgers)
+    const [activeBtn,setActiveBtn] = React.useState(false)
+    const [tabIndex,setIndex] = React.useState(0)
 
     const menuList=["Burgers","Drinks","Sides"]
     
-    let handleClick = (value) =>{
-        if(value && value==="Burgers"){
+    let handleClick = (item,value) =>{
+
+        setIndex(value)
+        if(item && item==="Burgers"){
             setMenuTab(data.Burgers)
-        } else if(value && value==="Drinks"){
+        } else if(item && item==="Drinks"){
             setMenuTab(data.Drinks)
-        } else if(value && value==="Sides"){
+        } else if(item && item==="Sides"){
             setMenuTab(data.Sides)
         }
+        
+
     }
   
     return (
@@ -24,47 +30,52 @@ export default function Menu(){
         
         <div className="menu">
 
-            {menuList.map((item,value)=>{
-                return(
-                    <button className="menu-list-btn" onClick={()=>handleClick(item)}>{item}</button>
-                )
-            })}
-        
-            {menuTab.map((item,value)=>{
-                return(
-                    
+         <div className="btn-container">
+                {menuList.map((item,value)=>{
+                    return(
+                        <button className={`menu-list-btn ${value===tabIndex ? "active-btn": undefined}`} onClick={()=>handleClick(item,value)}>{item}</button>
+                        )
+                    })}
+            </div>
 
-                    <div className="menu-item">
-                        <div className="item-img">
-                            <img src={item.image} alt="img"  className="product-photo"/>
-                        </div>
+            <div className="menu-items-container">
+                {menuTab.map((item,value)=>{
+                    return(
+                        
 
-                        <div className="item-info-section">
-                            <div className="item-info">
-                                <p className="item-name">{item.name}</p>
-                                <p className="item-price">$ {item.price} USD</p>
+                        <div className="menu-item">
+                            <div className="item-img">
+                                <img src={item.image} alt="img"  className="product-photo"/>
                             </div>
-                            <p className="item-description">{item.description}</p>
-                            
-                            <div className="sent-to-cart">
-                                <TextField
-                                    className="input"
-                                    type="number"
-                                    size="small"
-                                    defaultValue ={1}
-                                    
-                                    InputProps={{ inputProps: { min: 0} }}
-                                    InputLabelProps={{
-                                    shrink: true,
-                                    }}
-                                />
+
+                            <div className="item-info-section">
+                                <div className="item-info">
+                                    <p className="item-name">{item.name}</p>
+                                    <p className="item-price">$ {item.price.toFixed(2)} USD</p>
+                                </div>
+                                <p className="item-description">{item.description}</p>
                                 
-                                <button className="cart-btn">Add To Cart</button>
+                                <div className="sent-to-cart">
+                                    <TextField
+                                        className="input"
+                                        type="number"
+                                        size="small"
+                                        defaultValue ={1}
+                                        
+                                        InputProps={{ inputProps: { min: 0} }}
+                                        InputLabelProps={{
+                                        shrink: true,
+                                        }}
+                                    />
+                                    
+                                    <button className="cart-btn">Add To Cart</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                )
-            })}
+                    )
+                })}
+            </div>
+        
 
         </div>
         </>

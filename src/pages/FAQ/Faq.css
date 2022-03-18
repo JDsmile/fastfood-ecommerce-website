@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+button {
+  cursor: pointer;
+}
+
 .hero {
   background-image: url(../../assets/bg-3.png), url(../../assets/bg-1.svg);
   background-position: center;
@@ -29,7 +33,7 @@
   }
 }
 
-.btn-container {
+.tab-btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,7 +46,7 @@
   font-family: 'Inter', sans-serif;
 }
 
-.btn-container .tab-btn {
+.tab-btn-container .tab-btn {
   background-color: unset;
   border-color: rgba(97, 114, 131, 0);
   font-size: 16px;
@@ -56,14 +60,14 @@
 }
 
 @media (min-width: 750px) {
-  .btn-container .tab-btn {
+  .tab-btn-container .tab-btn {
     font-size: 20px;
     margin-bottom: 2em;
   }
 }
 
 @media (min-width: 750px) {
-  .btn-container {
+  .tab-btn-container {
     width: 100%;
   }
 }
