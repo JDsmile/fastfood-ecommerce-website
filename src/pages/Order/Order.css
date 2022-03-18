@@ -1,1 +1,32 @@
-/* No CSS *//*# sourceMappingURL=Order.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+button {
+  cursor: pointer;
+}
+
+.order-title {
+  text-align: center;
+  margin-bottom: 5em;
+  padding: 5em 1em;
+  background-image: url(../../assets/bg-3.png), url(../../assets/bg-1.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain, cover;
+}
+
+.order-title h1 {
+  font-size: 48px;
+  font-family: 'Inter', sans-serif;
+  max-width: 670px;
+  margin: 0 auto;
+}
+
+.order-title h1 span {
+  color: #35B8BE;
+}
+
+@media (min-width: 1000px) {
+  .order-title h1 {
+    font-size: 52px;
+  }
+}
+/*# sourceMappingURL=Order.css.map */

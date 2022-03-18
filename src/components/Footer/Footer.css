@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+button {
+  cursor: pointer;
+}
+
 .footer-container {
   background-image: url(../../assets/bg-2.svg);
   background-repeat: no-repeat;

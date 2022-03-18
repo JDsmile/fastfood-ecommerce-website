@@ -37,42 +37,45 @@ export default function Menu(){
                         )
                     })}
             </div>
-        
-            {menuTab.map((item,value)=>{
-                return(
-                    
 
-                    <div className="menu-item">
-                        <div className="item-img">
-                            <img src={item.image} alt="img"  className="product-photo"/>
-                        </div>
+            <div className="menu-items-container">
+                {menuTab.map((item,value)=>{
+                    return(
+                        
 
-                        <div className="item-info-section">
-                            <div className="item-info">
-                                <p className="item-name">{item.name}</p>
-                                <p className="item-price">$ {item.price} USD</p>
+                        <div className="menu-item">
+                            <div className="item-img">
+                                <img src={item.image} alt="img"  className="product-photo"/>
                             </div>
-                            <p className="item-description">{item.description}</p>
-                            
-                            <div className="sent-to-cart">
-                                <TextField
-                                    className="input"
-                                    type="number"
-                                    size="small"
-                                    defaultValue ={1}
-                                    
-                                    InputProps={{ inputProps: { min: 0} }}
-                                    InputLabelProps={{
-                                    shrink: true,
-                                    }}
-                                />
+
+                            <div className="item-info-section">
+                                <div className="item-info">
+                                    <p className="item-name">{item.name}</p>
+                                    <p className="item-price">$ {item.price.toFixed(2)} USD</p>
+                                </div>
+                                <p className="item-description">{item.description}</p>
                                 
-                                <button className="cart-btn">Add To Cart</button>
+                                <div className="sent-to-cart">
+                                    <TextField
+                                        className="input"
+                                        type="number"
+                                        size="small"
+                                        defaultValue ={1}
+                                        
+                                        InputProps={{ inputProps: { min: 0} }}
+                                        InputLabelProps={{
+                                        shrink: true,
+                                        }}
+                                    />
+                                    
+                                    <button className="cart-btn">Add To Cart</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                )
-            })}
+                    )
+                })}
+            </div>
+        
 
         </div>
         </>

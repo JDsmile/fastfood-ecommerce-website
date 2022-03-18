@@ -3,6 +3,17 @@
 
 @import "../../colors";
 
+@mixin tablet-screen {
+    @media(min-width:750px){
+        @content
+    }
+};
+@mixin desktop-screen{
+    @media(min-width:1000px){
+        @content
+    }
+    
+}
 .menu{
     display: flex;
     flex-direction: column;
@@ -10,6 +21,7 @@
     align-items: center;
     margin: 1em;
     font-family: 'Inter', sans-serif;
+    
 
    
 }
@@ -17,16 +29,34 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 2em;
+    justify-content: center;
+    align-items: center;
+    
+    @include tablet-screen(){
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+    }
     .menu-list-btn{
         border: none;
         background-color: transparent;
         color: black;
         padding: 0.75em 8.5em;
-        width: 100%;
+        width: 80%;
+        
+
         margin-bottom: 10px;
         border-radius: 5px;
         font-size: 16px;
         border: 1px solid lightgray;
+        @include tablet-screen(){
+            padding:1em 2em;
+            // width: 200px;
+            margin-right: 1em;
+        }
+        
+        
     }
 
     .active-btn{
@@ -39,10 +69,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items:center;
     border: 1px solid lightgrey;
     margin-bottom: 1em;
     border-radius: 10px;
+    
+    
+
+    @include tablet-screen(){
+        flex-direction: row;
+        padding: 1em;
+      
+    }
    
 
     .product-photo{
@@ -51,6 +89,12 @@
         margin-bottom: 1em;
         margin-top: 1em;
         border-radius: 10px;
+        
+
+        @include tablet-screen(){
+            width: 120px;
+     
+        }
     }
 
 }
@@ -59,15 +103,30 @@
     display: flex;
     flex-direction: column;
     padding-left: 1.2em;
+    @include tablet-screen(){
+        padding-top: 1em;
+    }
+
+ 
     .item-name{
         color: black;
         font-weight: 700;
         margin-bottom: 5px;
+        @include tablet-screen(){
+            font-size: 18px;
+            
+
+        }
     }
     .item-info{
         display: flex;
         flex-direction: column;
         margin-bottom: 0.5em;
+        @include tablet-screen(){
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
     }
     .item-price{
         color:$brand;
@@ -76,6 +135,12 @@
     .item-description{
         color: $paragraph;
         margin-bottom: 1em;
+        @include tablet-screen(){
+            max-width: 500px;
+        }
+        @include desktop-screen(){
+            // max-width: 300px;
+        }
     }
 
 }
@@ -94,5 +159,16 @@
         padding: 0 20px;
         border: none;
         border-radius: 5px;
+    }
+}
+
+.menu-items-container{
+    @include desktop-screen(){
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 100%;
+        gap:25px;
+        max-width: 1440px;
+        
     }
 }

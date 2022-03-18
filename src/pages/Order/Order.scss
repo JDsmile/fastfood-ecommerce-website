@@ -1,0 +1,29 @@
+@import "../../colors";
+
+
+
+.order-title{
+    text-align: center;
+    margin-bottom: 5em;
+    padding: 5em 1em;
+    background-image: url(../../assets/bg-3.png), url(../../assets/bg-1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  contain, cover;
+    // max-width: 1440px;
+
+    h1{
+        font-size: 48px;
+        font-family: 'Inter', sans-serif;
+        max-width: 670px;
+       
+        margin: 0 auto;
+        span{
+            color: $brand;
+        }
+
+        @media (min-width:1000px){
+            font-size: 52px;
+        }
+    }
+}
