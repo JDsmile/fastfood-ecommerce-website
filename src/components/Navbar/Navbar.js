@@ -1,16 +1,18 @@
 import React from "react";
-
 import "./Navbar.css"
 import logo from "../../assets/logo.svg"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import cart from "../../assets/cart-shopping-solid.svg"
 import bars from "../../assets/mobile-nav.svg"
+import Cart from "../Cart/Cart";
 
 export default function Navbar(){
     const [active,setActive] = React.useState(0)
     const [cartQuantity,setCartQuantity] = React.useState(0)
     const [showMenu,setShowMenu] = React.useState(false)
+    const [showCart,setShowCart] = React.useState(false)
+    
 
     const navigate = useNavigate()
 
@@ -44,6 +46,8 @@ export default function Navbar(){
     return(
 
         <div className="nav-wrap">
+
+            {showCart && <Cart setShowCart={setShowCart}/>}
             <div className="nav-container">
                 <a href="/">
                     <img className="logo" src={logo} alt="logo image"/>
@@ -65,7 +69,7 @@ export default function Navbar(){
                 </nav>
 
                 <div className="img-container">
-                    <img src={cart} alt="shopping cart icon" className="cart"/>
+                    <img src={cart} alt="shopping cart icon" className="cart" onClick={()=>setShowCart(!showCart)}/>
                     <p className="cart-quantity">{cartQuantity}</p>
                 </div>
                 {/* mobile nav */}
@@ -77,7 +81,7 @@ export default function Navbar(){
                                 
                                 {navLinks.map((link,value)=>{
                                     return(
-                                    <Link to={link.to} onClick={()=>checkActive(value)} onClick={()=>setShowMenu(false)} key={link.id}><li className={value===active? "active-tab": undefined}>{link.name}</li></Link>
+                                    <Link to={link.to} onClick={()=>checkActive(value)}  key={link.id}><li className={value===active? "active-tab": undefined}>{link.name}</li></Link>
                                     )
                                 })}
                             </ul>

@@ -11,20 +11,27 @@ import Company from "./pages/Company/Company"
 import FAQ from "./pages/FAQ/Faq"
 import Header from "./components/Header/Header"
 import "./App.css"
+import { MenuContext } from './Contexts/MenuContext';
 
 
 
 function App() {
+
+  const [CartItems,setCartItems]=React.useState([])
+  
   return (
+   
     <Router>
       <div className="App">
-      <Header/>
-        <Routes>
-          <Route path='/' element={<Home/>}></Route>
-          <Route path='order' element={<Order />}></Route>
-          <Route path='company' element={<Company />}></Route>
-          <Route path='faq' element={<FAQ />}></Route>
-        </Routes>
+        <MenuContext.Provider value={{CartItems,setCartItems}}>
+          <Header/>
+          <Routes>
+            <Route path='/' element={<Home/>}></Route>
+            <Route path='order' element={<Order />}></Route>
+            <Route path='company' element={<Company />}></Route>
+            <Route path='faq' element={<FAQ />}></Route>
+          </Routes>
+        </MenuContext.Provider>
       </div>
     </Router>
   );
