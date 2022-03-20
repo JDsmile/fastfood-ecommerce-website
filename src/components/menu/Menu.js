@@ -2,15 +2,17 @@ import React from "react";
 import "./Menu.css";
 import data from "../../data/menu.json";
 import TextField from '@mui/material/TextField';
+import { MenuContext } from "../../Contexts/MenuContext";
 
 
 export default function Menu(){
     const [menuTab,setMenuTab] = React.useState(data.Burgers)
     const [activeBtn,setActiveBtn] = React.useState(false)
     const [tabIndex,setIndex] = React.useState(0)
-
     const menuList=["Burgers","Drinks","Sides"]
-    
+
+    const {CartItems,setCartItems} = React.useContext(MenuContext)
+
     let handleClick = (item,value) =>{
 
         setIndex(value)
@@ -21,15 +23,24 @@ export default function Menu(){
         } else if(item && item==="Sides"){
             setMenuTab(data.Sides)
         }
-        
-
     }
+
+    function sentToCart(item){
+        
+        const currentItem = {"name":item.name,"price":item.price,"img":item.img}
+        setCartItems(()=>[...CartItems,currentItem])
+        
+        
+    }
+
+
+    console.log(CartItems)
+  
   
     return (
         <>
-        
         <div className="menu">
-
+            
          <div className="btn-container">
                 {menuList.map((item,value)=>{
                     return(
@@ -41,8 +52,6 @@ export default function Menu(){
             <div className="menu-items-container">
                 {menuTab.map((item,value)=>{
                     return(
-                        
-
                         <div className="menu-item">
                             <div className="item-img">
                                 <img src={item.image} alt="img"  className="product-photo"/>
@@ -68,7 +77,8 @@ export default function Menu(){
                                         }}
                                     />
                                     
-                                    <button className="cart-btn">Add To Cart</button>
+                                    <button className="cart-btn" 
+                                            onClick={()=>sentToCart(item)}>Add To Cart</button>
                                 </div>
                             </div>
                         </div>
