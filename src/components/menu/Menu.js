@@ -27,15 +27,9 @@ export default function Menu(){
 
     function sentToCart(item){
         
-        const currentItem = {"name":item.name,"price":item.price,"img":item.img}
+        const currentItem = {"name":item.name,"price":item.price,"img":item.image}
         setCartItems(()=>[...CartItems,currentItem])
-        
-        
     }
-
-
-    console.log(CartItems)
-  
   
     return (
         <>
