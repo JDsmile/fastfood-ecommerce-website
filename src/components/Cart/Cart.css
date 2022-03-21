@@ -99,6 +99,7 @@ button {
 
 .total-section {
   padding-left: 1em;
+  padding-right: 1em;
   padding-top: 15px;
   position: absolute;
   bottom: 20px;
@@ -123,13 +124,12 @@ button {
 
 .total-section div:first-child p:last-child {
   font-weight: 600;
-  padding-right: 10px;
 }
 
 .total-section .checkout {
   background-color: #35B8BE;
   border: none;
-  width: 95%;
+  width: 100%;
   color: white;
   padding: 1em 5em;
   border-radius: 5px;

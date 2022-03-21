@@ -80,6 +80,7 @@
 
 .total-section{
     padding-left: 1em;
+    padding-right: 1em;
     padding-top: 15px;
     position: absolute;
     bottom:20px;
@@ -95,7 +96,6 @@
         }
         p:last-child{
             font-weight: 600;
-            padding-right: 10px;
             
         }
 
@@ -103,7 +103,7 @@
     .checkout{
         background-color: $brand;
         border: none;
-        width: 95%;
+        width: 100%;
         color:white;
         padding: 1em 5em;
         border-radius: 5px;

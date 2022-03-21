@@ -7,7 +7,7 @@ import TextField from '@mui/material/TextField';
 
 export default function Cart({setShowCart}){
     const {CartItems,setCartItems} = React.useContext(MenuContext)
-    const [total,setTotal] = React.useState(233)
+    const [total,setTotal] = React.useState(225)
     return(
         <div className="cart-container">
             <div className="header-section">
@@ -54,7 +54,7 @@ export default function Cart({setShowCart}){
             <div className="total-section">
                 <div>
                     <p>Subtotal</p>
-                    <p className="total-price">$ {total.toFixed(2)} USD</p>
+                    <p className="total-price">$ {total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} USD</p>
                 </div>
 
                 <button className="checkout">Continue to Checkout</button>
