@@ -12,7 +12,10 @@ export default function Menu(){
     const menuList=["Burgers","Drinks","Sides"]
 
     const {CartItems,setCartItems} = React.useContext(MenuContext)
+    const {productQuantity,setProductQuantity}= React.useContext(MenuContext)
+    const {itemIndex,setItemIndex}= React.useContext(MenuContext)
 
+   
     let handleClick = (item,value) =>{
 
         setIndex(value)
@@ -26,10 +29,22 @@ export default function Menu(){
     }
 
     function sentToCart(item){
+
+        if(productQuantity>0){
+            const currentItem = {"name":item.name,"price":item.price,"img":item.image,"quantity":productQuantity}
+            setCartItems(()=>[...CartItems,currentItem])
+           
+            
+        }
+        setProductQuantity(0)
         
-        const currentItem = {"name":item.name,"price":item.price,"img":item.image}
-        setCartItems(()=>[...CartItems,currentItem])
     }
+
+    function handleChange(item,value){
+        setItemIndex(value)
+
+    }
+
   
     return (
         <>
@@ -54,17 +69,20 @@ export default function Menu(){
                             <div className="item-info-section">
                                 <div className="item-info">
                                     <p className="item-name">{item.name}</p>
-                                    <p className="item-price">$ {item.price.toFixed(2)} USD</p>
+                                    <p className="item-price">$ {item.price.toFixed(2)}USD</p>
                                 </div>
+
                                 <p className="item-description">{item.description}</p>
                                 
                                 <div className="sent-to-cart">
                                     <TextField
+                                        
                                         className="input"
                                         type="number"
                                         size="small"
-                                        defaultValue ={1}
-                                        
+                                        defaultValue={0}
+                                        onClick={()=>handleChange(item,value)}
+                                        onChange={(e)=>setProductQuantity(e.target.value)}
                                         InputProps={{ inputProps: { min: 0} }}
                                         InputLabelProps={{
                                         shrink: true,
@@ -80,7 +98,6 @@ export default function Menu(){
                 })}
             </div>
         
-
         </div>
         </>
 

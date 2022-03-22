@@ -18,12 +18,14 @@ import { MenuContext } from './Contexts/MenuContext';
 function App() {
 
   const [CartItems,setCartItems]=React.useState([])
+  const [productQuantity,setProductQuantity]= React.useState()
+  const [itemIndex,setItemIndex] = React.useState()
   
   return (
    
     <Router>
       <div className="App">
-        <MenuContext.Provider value={{CartItems,setCartItems}}>
+        <MenuContext.Provider value={{CartItems,setCartItems,productQuantity,setProductQuantity,itemIndex,setItemIndex}}>
           <Header/>
           <Routes>
             <Route path='/' element={<Home/>}></Route>

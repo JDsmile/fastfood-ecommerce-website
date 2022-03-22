@@ -6,10 +6,11 @@ import { useNavigate } from "react-router-dom";
 import cart from "../../assets/cart-shopping-solid.svg"
 import bars from "../../assets/mobile-nav.svg"
 import Cart from "../Cart/Cart";
+import { MenuContext } from "../../Contexts/MenuContext";
 
 export default function Navbar(){
     const [active,setActive] = React.useState(0)
-    const [cartQuantity,setCartQuantity] = React.useState(0)
+    const {CartItems,setCartItems} = React.useContext(MenuContext)
     const [showMenu,setShowMenu] = React.useState(false)
     const [showCart,setShowCart] = React.useState(false)
     
@@ -70,7 +71,7 @@ export default function Navbar(){
 
                 <div className="img-container">
                     <img src={cart} alt="shopping cart icon" className="cart" onClick={()=>setShowCart(!showCart)}/>
-                    <p className="cart-quantity">{cartQuantity}</p>
+                    <p className="cart-quantity">{CartItems.length}</p>
                 </div>
                 {/* mobile nav */}
                 <nav>
