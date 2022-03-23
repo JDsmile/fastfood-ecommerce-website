@@ -38,7 +38,6 @@
     display: flex;
     flex-direction: column;
     font-size: 15px;
-    
     margin-bottom: 1em;
     
     .cart-item{
@@ -64,6 +63,8 @@
 
 .product-name{
     font-weight: 600;
+    
+    
 }
 .product-price{
     font-weight: 400;
@@ -103,13 +104,47 @@
         border: none;
         width: 100%;
         color:white;
-        padding: 1em 5em;
+        padding: 1em 0em;
         border-radius: 5px;
         font-size: 18px;
         display: flex;
         justify-content: center ;
         align-items: center;
     }
+  
+}
+
+
+.qty-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    h2{
+        font-size: 15px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .qty-btn{
+        border: none;
+        font-size: 22px;
+        background-color: $brand;
+        border-radius: 5px;
+        color: white;
+        
+    }
+}
+
+.error-message{
+    background-color: pink;
+    padding: 10px;
+    margin-top: 20px;
+    display: none;
+}
+
+.hide{
+    display: block;
 }
 
 

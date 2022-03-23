@@ -13,6 +13,7 @@ export default function Cart({setShowCart}){
     const {itemIndex,setItemIndex}= React.useContext(MenuContext)
     const [toggleBtn,setToggleBtn] = React.useState(true)
     const [up,setUp] = React.useState(0)
+    const [checkout,setCheckout] = React.useState(false)
 
     
     useEffect(()=>{
@@ -91,11 +92,14 @@ export default function Cart({setShowCart}){
                                     onClick={()=>handleRemove(item,value)}>Remove</button>
                             </div>
 
+                            <div className="qty-section">
 
-                            <button className="plus" onClick={()=>{setToggleBtn(true);updateQty(item,value);}}>+</button>
-                            
-                            <h2>{item.quantity}</h2>
-                            <button className="minus"onClick={()=>{setToggleBtn(false);updateQty(item,value);}}>-</button>
+                                <button className="plus qty-btn" onClick={()=>{setToggleBtn(true);updateQty(item,value);}}>+</button>
+                                
+                                <h2>{item.quantity}</h2>
+                                <button className="minus qty-btn"onClick={()=>{setToggleBtn(false);updateQty(item,value);}}>-</button>
+
+                            </div>
                         </div>
                     )
                 })}
@@ -107,7 +111,9 @@ export default function Cart({setShowCart}){
                     <p className="total-price">$ {total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} USD</p>
                 </div>
 
-                <button className="checkout">Continue to Checkout</button>
+                <button className="checkout" 
+                    onClick={()=>setCheckout(true)}>Continue to Checkout</button>
+                <p className= {`error-message ${checkout && "hide"}`} >Checkout is currently disabled.</p>
             </div>
             
         </div>

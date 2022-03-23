@@ -131,7 +131,7 @@ button {
   border: none;
   width: 100%;
   color: white;
-  padding: 1em 5em;
+  padding: 1em 0em;
   border-radius: 5px;
   font-size: 18px;
   display: -webkit-box;
@@ -143,5 +143,44 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.qty-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: 20px;
+}
+
+.qty-section h2 {
+  font-size: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.qty-section .qty-btn {
+  border: none;
+  font-size: 22px;
+  background-color: #35B8BE;
+  border-radius: 5px;
+  color: white;
+}
+
+.error-message {
+  background-color: pink;
+  padding: 10px;
+  margin-top: 20px;
+  display: none;
+}
+
+.hide {
+  display: block;
 }
 /*# sourceMappingURL=Cart.css.map */
