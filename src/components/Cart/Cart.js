@@ -4,33 +4,67 @@ import plus from "../../assets/times-solid.svg"
 import { MenuContext } from "../../Contexts/MenuContext";
 import TextField from '@mui/material/TextField';
 import { render } from "@testing-library/react";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Cart({setShowCart}){
     const {CartItems,setCartItems} = React.useContext(MenuContext)
     const [total,setTotal] = React.useState(0)
-    const {productQuantity,setProductQuantity}= React.useContext(MenuContext)
     const {itemIndex,setItemIndex}= React.useContext(MenuContext)
+    const [toggleBtn,setToggleBtn] = React.useState(true)
+    const [up,setUp] = React.useState(0)
 
-
+    
     useEffect(()=>{
+        setTotal(()=>0)
             CartItems.map((item,value)=>{
                 return(
-                    setTotal(total+item.price*item.quantity)
+                    setTotal((prev)=>prev+item.price*item.quantity)
                 )
             })
     },[CartItems])
+
     
-
     function handleRemove(item,value){
-
-        //create new array without the selected one
+        
+        //create new list after remove  item
         setCartItems(CartItems.filter((product,index)=>index!==CartItems.indexOf(item)))
 
-        //set to 0 for recalculation
+        //set total back to 0 for recalculation
         setTotal(()=>0)
-
     }
+
+
+    //update cart when quantity changes
+   
+    function updateQty(item,value){
+        setItemIndex(()=>value)
+
+        //dommi for rerender
+        setUp((prev)=>prev+1)
+
+      
+    }
+
+    
+    useEffect(()=>{
+        setCartItems(()=>CartItems.map((item,value)=>{
+            if(value === itemIndex){
+                return(
+                    {...item,"quantity": toggleBtn ? item.quantity + 1 : item.quantity-1 }
+                    )      
+            }else{
+                return (item)
+            }
+        }))
+        
+    },[up])
+
+    //re render cart if button clicked, total changed, or index of the item
+    // useEffect(()=>{
+      
+    // },[itemIndex,total,toggleBtn])
+
 
     return(
         <div className="cart-container">
@@ -57,24 +91,16 @@ export default function Cart({setShowCart}){
                                     onClick={()=>handleRemove(item,value)}>Remove</button>
                             </div>
 
-                            <TextField
-                                        className="quantity"
-                                        type="number"
-                                        size="small"
-                                        defaultValue={item.quantity}
-                                        onChange={(e)=>setProductQuantity(e.target.value)}
-                                        InputLabelProps={{
-                                        shrink: true,
-                                        }}
-                                    />
+
+                            <button className="plus" onClick={()=>{setToggleBtn(true);updateQty(item,value);}}>+</button>
+                            
+                            <h2>{item.quantity}</h2>
+                            <button className="minus"onClick={()=>{setToggleBtn(false);updateQty(item,value);}}>-</button>
                         </div>
-
-                     
-
                     )
                 })}
             </div>
-
+    
             <div className="total-section">
                 <div>
                     <p>Subtotal</p>

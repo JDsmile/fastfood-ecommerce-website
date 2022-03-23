@@ -15,8 +15,9 @@ export default function Menu(){
     const {productQuantity,setProductQuantity}= React.useContext(MenuContext)
     const {itemIndex,setItemIndex}= React.useContext(MenuContext)
 
-   
-    let handleClick = (item,value) =>{
+    const textInput = React.useRef();
+
+    const handleClick = (item,value) =>{
 
         setIndex(value)
         if(item && item==="Burgers"){
@@ -28,24 +29,18 @@ export default function Menu(){
         }
     }
 
-    function sentToCart(item){
+    const sentToCart=(item,value)=>{
 
-        if(productQuantity>0){
-            const currentItem = {"name":item.name,"price":item.price,"img":item.image,"quantity":productQuantity}
-            setCartItems(()=>[...CartItems,currentItem])
-           
-            
-        }
-        setProductQuantity(0)
-        
-    }
+        // setProductQuantity(prev=>textInput.current.value)
+        // setItemIndex(value)
+        const currentItem = {"name":item.name,"price":item.price,"img":item.image,"quantity":productQuantity}
+        setCartItems(()=>[...CartItems,currentItem])   
 
-    function handleChange(item,value){
-        setItemIndex(value)
 
     }
+    
 
-  
+    
     return (
         <>
         <div className="menu">
@@ -74,23 +69,10 @@ export default function Menu(){
 
                                 <p className="item-description">{item.description}</p>
                                 
-                                <div className="sent-to-cart">
-                                    <TextField
-                                        
-                                        className="input"
-                                        type="number"
-                                        size="small"
-                                        defaultValue={0}
-                                        onClick={()=>handleChange(item,value)}
-                                        onChange={(e)=>setProductQuantity(e.target.value)}
-                                        InputProps={{ inputProps: { min: 0} }}
-                                        InputLabelProps={{
-                                        shrink: true,
-                                        }}
-                                    />
-                                    
+                                <div className="sent-to-cart">          
                                     <button className="cart-btn" 
-                                            onClick={()=>sentToCart(item)}>Add To Cart</button>
+                                            onClick={()=>sentToCart(item,value)
+                                            }>Add To Cart</button>
                                 </div>
                             </div>
                         </div>

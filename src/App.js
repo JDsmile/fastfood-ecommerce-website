@@ -18,7 +18,7 @@ import { MenuContext } from './Contexts/MenuContext';
 function App() {
 
   const [CartItems,setCartItems]=React.useState([])
-  const [productQuantity,setProductQuantity]= React.useState()
+  const [productQuantity,setProductQuantity]= React.useState(1)
   const [itemIndex,setItemIndex] = React.useState()
   
   return (
