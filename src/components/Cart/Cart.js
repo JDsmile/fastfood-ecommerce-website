@@ -8,6 +8,7 @@ import { faL } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Cart({setShowCart}){
+
     const {CartItems,setCartItems} = React.useContext(MenuContext)
     const [total,setTotal] = React.useState(0)
     const {itemIndex,setItemIndex}= React.useContext(MenuContext)
@@ -24,6 +25,7 @@ export default function Cart({setShowCart}){
                 )
             })
     },[CartItems])
+
 
     
     function handleRemove(item,value){

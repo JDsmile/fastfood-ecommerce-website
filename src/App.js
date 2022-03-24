@@ -14,21 +14,29 @@ import "./App.css"
 import { MenuContext } from './Contexts/MenuContext';
 import { NavLink } from 'react-router-dom'
 
+function retriveData(){
 
+  const localData = localStorage.getItem("cart")
 
-function App() {
+  return localData && JSON.parse(localData) 
+}
 
-  const [CartItems,setCartItems]=React.useState([])
-  const [productQuantity,setProductQuantity]= React.useState(1)
-  const [itemIndex,setItemIndex] = React.useState()
+  function App() {
 
-  return (
+    const [CartItems,setCartItems]=React.useState(retriveData,[])
+    const [productQuantity,setProductQuantity]= React.useState(1)
+    const [itemIndex,setItemIndex] = React.useState()
+
+    React.useEffect(()=>{
+      localStorage.setItem("cart" , JSON.stringify(CartItems))
+    },[CartItems])
+
+    return (
    
-    
     <Router>
     
       <div className="App">
-        <MenuContext.Provider value={{CartItems,setCartItems,productQuantity,setProductQuantity,itemIndex,setItemIndex}}>
+        <MenuContext.Provider value={{CartItems,setCartItems,productQuantity,setProductQuantity,itemIndex,setItemIndex,retriveData}}>
           <Header/>
           <Routes>
 
