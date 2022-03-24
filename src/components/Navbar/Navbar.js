@@ -2,14 +2,16 @@ import React from "react";
 import "./Navbar.css"
 import logo from "../../assets/logo.svg"
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,NavLink } from "react-router-dom";
 import cart from "../../assets/cart-shopping-solid.svg"
 import bars from "../../assets/mobile-nav.svg"
 import Cart from "../Cart/Cart";
 import { MenuContext } from "../../Contexts/MenuContext";
+import { faL } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function Navbar(){
-    const [active,setActive] = React.useState(0)
+    const [active,setActive] = React.useState("Home")
     const {CartItems,setCartItems} = React.useContext(MenuContext)
     const [showMenu,setShowMenu] = React.useState(false)
     const [showCart,setShowCart] = React.useState(false)
@@ -40,13 +42,14 @@ export default function Navbar(){
         },
     ]
 
-    function checkActive(value){
-        setActive(value)
+    function checkActive(link){
+        setActive(link.name)
     }
 
     return(
 
         <div className="nav-wrap">
+       
 
             {showCart && <Cart setShowCart={setShowCart}/>}
             <div className="nav-container">
@@ -63,7 +66,11 @@ export default function Navbar(){
 
                         {navLinks.map((link,value)=>{
                             return(
-                              <Link to={link.to} onClick={()=>checkActive(value)} key={link.id}><li className={value===active? "active-menu": undefined}>{link.name}</li></Link>
+                              <NavLink to={link.to} 
+                                onClick={()=>setShowCart(false)}
+                                key={link.id}
+                                className={({ isActive }) => (isActive ? 'active-menu' : undefined)}
+                                ><li>{link.name}</li></NavLink>
                             )
                         })}
                     </ul>

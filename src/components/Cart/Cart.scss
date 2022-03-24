@@ -9,6 +9,11 @@
     background-color: white;
     overflow-y: scroll;
     width: clamp(330px,30vw,500px);
+    justify-content: space-between;
+   
+    display: flex;
+    flex-direction: column;
+    
     
     .header-section{
         display: flex;
@@ -38,8 +43,9 @@
     display: flex;
     flex-direction: column;
     font-size: 15px;
-    margin-bottom: 1em;
-    
+    margin-bottom: 1em;    
+    display: table-cell;
+
     .cart-item{
         display: flex;
         align-items: center;
@@ -81,10 +87,10 @@
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 15px;
-    position: absolute;
-    bottom:20px;
     border-top: 1px solid lightgray;
     width: 100%;
+   
+   
     div:first-child{
         display: flex;
         justify-content: space-between;

@@ -90,15 +90,12 @@
                 font-size: 16px;
                 margin-bottom: 2em;
             }
-
         }
     }
-
 }
 
 .active-menu{
-    color: $brand;
-
+    color: $brand !important;
 }
 
 .img-container{
