@@ -13,6 +13,7 @@ export default function Cart({setShowCart}){
     const {itemIndex,setItemIndex}= React.useContext(MenuContext)
     const [toggleBtn,setToggleBtn] = React.useState(true)
     const [up,setUp] = React.useState(0)
+    const [checkout,setCheckout] = React.useState(false)
 
     
     useEffect(()=>{
@@ -68,37 +69,44 @@ export default function Cart({setShowCart}){
 
     return(
         <div className="cart-container">
-            <div className="header-section">
-                <h1>Your Order</h1>
-                <img src={plus} alt="" className="nav-close" onClick={()=>setShowCart(false)}/>
+            <div>
+
                 
-            </div>
+                <div className="header-section">
+                    <h1>Your Order</h1>
+                    <img src={plus} alt="" className="nav-close" onClick={()=>setShowCart(false)}/>
+                    
+                </div>
 
-            <div className="cart-items-container">
+                <div className="cart-items-container">
 
-                {CartItems.map((item,value)=>{
-                    return(
-                        <div className="cart-item">
+                    {CartItems.map((item,value)=>{
+                        return(
+                            <div className="cart-item">
 
-                            <img src={item.img} className="small-img"/>
-                            <div className="product-info">
-                                <div>
-                                    <p className="product-name">{item.name}</p>
-                                    <p className="product-price">$ {item.price.toFixed(2)} USD</p>
+                                <img src={item.img} className="small-img"/>
+                                <div className="product-info">
+                                    <div>
+                                        <p className="product-name">{item.name}</p>
+                                        <p className="product-price">$ {item.price.toFixed(2)} USD</p>
+                                    </div>
+
+                                    <button className="remove-btn" 
+                                        onClick={()=>handleRemove(item,value)}>Remove</button>
                                 </div>
 
-                                <button className="remove-btn" 
-                                    onClick={()=>handleRemove(item,value)}>Remove</button>
+                                <div className="qty-section">
+
+                                    <button className="plus qty-btn" onClick={()=>{setToggleBtn(true);updateQty(item,value);}}>+</button>
+                                    
+                                    <h2>{item.quantity}</h2>
+                                    <button className="minus qty-btn"onClick={()=>{setToggleBtn(false);updateQty(item,value);}}>-</button>
+
+                                </div>
                             </div>
-
-
-                            <button className="plus" onClick={()=>{setToggleBtn(true);updateQty(item,value);}}>+</button>
-                            
-                            <h2>{item.quantity}</h2>
-                            <button className="minus"onClick={()=>{setToggleBtn(false);updateQty(item,value);}}>-</button>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
     
             <div className="total-section">
@@ -107,7 +115,9 @@ export default function Cart({setShowCart}){
                     <p className="total-price">$ {total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} USD</p>
                 </div>
 
-                <button className="checkout">Continue to Checkout</button>
+                <button className="checkout" 
+                    onClick={()=>setCheckout(true)}>Continue to Checkout</button>
+                <p className= {`error-message ${checkout && "hide"}`} >Checkout is currently disabled.</p>
             </div>
             
         </div>

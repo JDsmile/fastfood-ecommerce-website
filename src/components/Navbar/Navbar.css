@@ -120,7 +120,7 @@ button {
 }
 
 .active-menu {
-  color: #35B8BE;
+  color: #35B8BE !important;
 }
 
 .img-container {

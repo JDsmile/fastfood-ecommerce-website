@@ -21,7 +21,6 @@ export default function Company(){
                 <div className="content-info">
                     <h2 className="section-title">The home of fresh products</h2>
                     <p className="section-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente explicabo officiis quasi ipsum vel ipsam sequi eligendi eius at. Sed?</p>
-                    <button className="primary-btn">Learn about us</button>
                 </div>
 
                 <img src={img} alt="" />

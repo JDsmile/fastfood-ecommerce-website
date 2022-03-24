@@ -41,6 +41,11 @@ button {
   font-family: 'Inter', sans-serif;
 }
 
+.hero a {
+  text-decoration: none;
+  color: white;
+}
+
 @media (min-width: 999px) {
   .hero {
     -webkit-box-orient: horizontal;
@@ -65,9 +70,20 @@ button {
   padding: 0 20px;
 }
 
+.intro a {
+  text-decoration: none;
+  color: white;
+}
+
 @media (min-width: 500px) {
   .intro {
     padding-top: 5em;
+  }
+}
+
+@media (min-width: 999px) {
+  .intro {
+    text-align: left;
   }
 }
 
@@ -105,7 +121,7 @@ button {
   color: #546285;
   line-height: 1.3;
   margin-bottom: 3em;
-  max-width: 730px;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -327,6 +343,11 @@ button {
   padding-top: 10em;
 }
 
+.menu-section a {
+  text-decoration: none;
+  color: white;
+}
+
 .menu-section .menu-title {
   color: #35B8BE;
   font-size: 48px;
@@ -386,12 +407,17 @@ button {
   }
 }
 
-.content-section {
+.content-section-home {
   padding: 20px;
 }
 
+.content-section-home a {
+  text-decoration: none;
+  color: white;
+}
+
 @media (min-width: 999px) {
-  .content-section {
+  .content-section-home {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -404,7 +430,7 @@ button {
         -ms-flex-align: center;
             align-items: center;
   }
-  .content-section img {
+  .content-section-home img {
     width: 450px;
     height: auto;
     padding: 0;
@@ -412,14 +438,14 @@ button {
   }
 }
 
-.content-section .title {
+.content-section-home .title {
   font-size: 43px;
   color: #35B8BE;
   margin-bottom: 0.75em;
 }
 
 @media (min-width: 500px) {
-  .content-section .title {
+  .content-section-home .title {
     max-width: 580px;
     margin-left: auto;
     margin-right: auto;
@@ -430,20 +456,20 @@ button {
 }
 
 @media (min-width: 999px) {
-  .content-section .title {
+  .content-section-home .title {
     padding-top: 1em;
     margin-top: 0;
   }
 }
 
-.content-section .para {
+.content-section-home .para {
   color: #546285;
   line-height: 1.5;
   margin-bottom: 1.75em;
 }
 
 @media (min-width: 500px) {
-  .content-section .para {
+  .content-section-home .para {
     max-width: 580px;
     margin-left: auto;
     margin-right: auto;
@@ -452,7 +478,7 @@ button {
   }
 }
 
-.content-section .nav-faq {
+.content-section-home .nav-faq {
   border: none;
   font-size: 18px;
   color: white;
@@ -463,14 +489,14 @@ button {
 }
 
 @media (min-width: 500px) {
-  .content-section .nav-faq {
+  .content-section-home .nav-faq {
     max-width: 30%;
     font-size: 22px;
   }
 }
 
 @media (min-width: 999px) {
-  .content-section .nav-faq {
+  .content-section-home .nav-faq {
     margin-left: 0;
     max-width: 50%;
   }
@@ -484,13 +510,19 @@ button {
   margin-bottom: 0.5em;
 }
 
+.content-last a {
+  text-decoration: none;
+  color: #35B8BE;
+}
+
 @media (min-width: 999px) {
   .content-last {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 10px;
+    gap: 30px;
+    margin: 0 1em;
   }
 }
 
@@ -510,10 +542,9 @@ button {
   font-size: 43px;
   text-align: left;
   font-weight: 700;
-  margin: 10px;
   color: #1b9097;
   background-image: url(../../assets/pattern.svg);
-  background-position: 0 100px;
+  background-position: 0;
   background-size: contain;
   background-repeat: no-repeat;
   line-height: 1.5;
@@ -528,10 +559,10 @@ button {
 @media (min-width: 999px) {
   .content-last .content-info {
     padding-top: 0;
-    margin: 0 10px;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    padding-left: 0.5em;
   }
 }
 

@@ -12,6 +12,7 @@ import Image6 from "../../assets/home-img-6.png"
 import Image7 from "../../assets/home-img-7.png"
 import Image8 from "../../assets/home-img-8.png"
 import Footer from "../../components/Footer/Footer"
+import { Link } from "react-router-dom";
 
 
 export default function Home(){
@@ -24,7 +25,9 @@ export default function Home(){
                     <h1 className="hero-h1">Beautiful food & takeaway, <span>delivered</span> to your door.</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque nisi, libero architecto consequuntur perspiciatis quis voluptate velit laboriosam distinctio quaerat.</p>
 
-                    <button className="primary-btn">Place an Order</button>
+                    <button className="primary-btn">
+                        <Link to="/order">Place an Order</Link>
+                    </button>
 
                     <img src={BrandLogo} alt="" />
 
@@ -44,7 +47,9 @@ export default function Home(){
                     <h2 className="content-title">The home of fresh products</h2>
                     <p  className="content-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, delectus doloremque quod consectetur quaerat a ratione, ipsam itaque ea ut vel, explicabo vitae vero et!</p>
 
-                    <button>Learn about us</button>
+                    <button>
+                        <Link to="/company">Learn about us</Link>
+                    </button>
                 </div>
 
                 <div>
@@ -82,22 +87,26 @@ export default function Home(){
 
                 {/* menu goes here later */}
 
-                <button className="to-menu">See Full Menu</button>
+                <button className="to-menu">
+                    <Link to="/company">See Full Menu</Link>
+                </button>
             </div>
 
-            <div className="content-section flex-container">
+            <div className="content-section-home flex-container">
                 <img src={Image6} alt="" className="img"/>
 
                 <div className="info-title"> 
 
                     <h2 className="title">Order online with our simple checkout.</h2>
                     <p className="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit possimus neque quam perspiciatis atque itaque, accusantium obcaecati eaque laboriosam, iste porro quod ea minus a libero at repellendus. Magnam, sint.</p>
-                    <button className="nav-faq">See our FAQ</button>
+                    <button className="nav-faq">
+                    <Link to="/faq">See our FAQ</Link>
+                </button>
                 
                 </div>
             </div>
 
-            <div className="content-section bg-brand flex-container">
+            <div className="content-section-home bg-brand flex-container">
          
                 <div className="info-title"> 
 
@@ -119,7 +128,10 @@ export default function Home(){
                 <div className="content-info">
                     <p>Support <span>good food <br/> and local business.</span></p>
 
-                    <button>Order Now</button>
+                    <button>
+                        <Link to="/order">Order Now</Link>
+              
+                    </button>
                 </div>
             </div>
 

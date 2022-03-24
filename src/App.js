@@ -12,6 +12,7 @@ import FAQ from "./pages/FAQ/Faq"
 import Header from "./components/Header/Header"
 import "./App.css"
 import { MenuContext } from './Contexts/MenuContext';
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -20,14 +21,18 @@ function App() {
   const [CartItems,setCartItems]=React.useState([])
   const [productQuantity,setProductQuantity]= React.useState(1)
   const [itemIndex,setItemIndex] = React.useState()
-  
+
   return (
    
+    
     <Router>
+    
       <div className="App">
         <MenuContext.Provider value={{CartItems,setCartItems,productQuantity,setProductQuantity,itemIndex,setItemIndex}}>
           <Header/>
           <Routes>
+
+    
             <Route path='/' element={<Home/>}></Route>
             <Route path='order' element={<Order />}></Route>
             <Route path='company' element={<Company />}></Route>
