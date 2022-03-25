@@ -129,10 +129,11 @@ export default function Cart({setShowCart}){
                     <p>Subtotal</p>
                     <p className="total-price">$ {total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} USD</p>
                 </div>
-
+                
+                <p className= {`error-message ${checkout && "hide"}`} >Checkout is currently disabled.</p>   
                 <button className="checkout" 
                     onClick={()=>setCheckout(true)}>Continue to Checkout</button>
-                <p className= {`error-message ${checkout && "hide"}`} >Checkout is currently disabled.</p>
+                
             </div>
             
         </div>
