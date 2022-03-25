@@ -17,11 +17,11 @@ export default function Menu(){
     const [showMessage,setShowMessage] = React.useState(false)
     const [index,setdIndex] = React.useState(0)
 
-    const handleClick = (item,value) =>{
 
+    const handleClick = (item,value) =>{
         setIndex(value)
         setShowMessage(()=>false)
-        
+
         if(item && item==="Burgers"){
             setMenuTab(data.Burgers)
         } else if(item && item==="Drinks"){

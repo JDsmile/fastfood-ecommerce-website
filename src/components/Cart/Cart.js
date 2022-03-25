@@ -2,9 +2,6 @@ import React, { useEffect } from "react";
 import "../Cart/Cart.css"
 import plus from "../../assets/times-solid.svg"
 import { MenuContext } from "../../Contexts/MenuContext";
-import TextField from '@mui/material/TextField';
-import { render } from "@testing-library/react";
-import { faL } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Cart({setShowCart}){
@@ -16,14 +13,32 @@ export default function Cart({setShowCart}){
     const [up,setUp] = React.useState(0)
     const [checkout,setCheckout] = React.useState(false)
 
+
+
+
+
+
+    
+
     
     useEffect(()=>{
+     
         setTotal(()=>0)
+
             CartItems.map((item,value)=>{
+
+                //remove the item with quantity of 0  before calculation
+                if(item.quantity<=0){
+                    setCartItems(CartItems.filter((product,index)=>product.quantity>0))
+                    return;
+                }
+
                 return(
                     setTotal((prev)=>prev+item.price*item.quantity)
                 )
             })
+
+            
     },[CartItems])
 
 
@@ -42,16 +57,18 @@ export default function Cart({setShowCart}){
    
     function updateQty(item,value){
         setItemIndex(()=>value)
-
         //dommi for rerender
         setUp((prev)=>prev+1)
 
-      
     }
 
+ 
     
     useEffect(()=>{
+          
+
         setCartItems(()=>CartItems.map((item,value)=>{
+            
             if(value === itemIndex){
                 return(
                     {...item,"quantity": toggleBtn ? item.quantity + 1 : item.quantity-1 }
@@ -61,12 +78,8 @@ export default function Cart({setShowCart}){
             }
         }))
         
+        
     },[up])
-
-    //re render cart if button clicked, total changed, or index of the item
-    // useEffect(()=>{
-      
-    // },[itemIndex,total,toggleBtn])
 
 
     return(
@@ -101,7 +114,7 @@ export default function Cart({setShowCart}){
 
                                     <button className="plus qty-btn" onClick={()=>{setToggleBtn(true);updateQty(item,value);}}>+</button>
                                     
-                                    <h2>{item.quantity}</h2>
+                                    <h2 >{item.quantity}</h2>
                                     <button className="minus qty-btn"onClick={()=>{setToggleBtn(false);updateQty(item,value);}}>-</button>
 
                                 </div>

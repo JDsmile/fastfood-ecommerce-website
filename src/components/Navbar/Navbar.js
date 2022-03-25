@@ -7,7 +7,8 @@ import cart from "../../assets/cart-shopping-solid.svg"
 import bars from "../../assets/mobile-nav.svg"
 import Cart from "../Cart/Cart";
 import { MenuContext } from "../../Contexts/MenuContext";
-import { faL } from "@fortawesome/free-solid-svg-icons";
+import OutsideClickHandler from 'react-outside-click-handler';
+
 
 
 export default function Navbar(){
@@ -15,7 +16,6 @@ export default function Navbar(){
     const {CartItems,setCartItems} = React.useContext(MenuContext)
     const [showMenu,setShowMenu] = React.useState(false)
     const [showCart,setShowCart] = React.useState(false)
-    
 
     const navigate = useNavigate()
 
@@ -45,13 +45,18 @@ export default function Navbar(){
     function checkActive(link){
         setActive(link.name)
     }
-
+   
     return(
 
         <div className="nav-wrap">
-       
+            
+            {/* close when cliked outside cart section */}
+            <OutsideClickHandler onOutsideClick={() => {
+                setShowCart(false)
+            }}>
+                {showCart && <Cart setShowCart={setShowCart}/>}
 
-            {showCart && <Cart setShowCart={setShowCart}/>}
+            </OutsideClickHandler>
             <div className="nav-container">
                 <a href="/">
                     <img className="logo" src={logo} alt="logo image"/>
