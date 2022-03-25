@@ -147,7 +147,12 @@
 .sent-to-cart{
     margin-bottom: 2em;
     display: flex;
-
+    padding-right: 10px;
+    justify-content: space-between;
+    // @include tablet-screen(){
+    //     flex-direction: column;
+    // }
+ 
     .cart-btn{
         background-color: #35B8BE;
         color: white;
@@ -155,6 +160,16 @@
         padding: 10px 20px;
         border: none;
         border-radius: 5px;
+    }
+    .alert{
+        // border:1px solid red;
+        // color:red;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        border-width: 2px;
+        font-size: 14px;
+       
     }
 }
 

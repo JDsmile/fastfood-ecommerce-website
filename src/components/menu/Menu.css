@@ -192,6 +192,10 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-right: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .sent-to-cart .cart-btn {
@@ -201,6 +205,11 @@ button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
+}
+
+.sent-to-cart .alert {
+  border-width: 2px;
+  font-size: 14px;
 }
 
 @media (min-width: 1000px) {
