@@ -3,7 +3,6 @@ import "../Cart/Cart.css"
 import plus from "../../assets/times-solid.svg"
 import { MenuContext } from "../../Contexts/MenuContext";
 
-
 export default function Cart({setShowCart}){
 
     const {CartItems,setCartItems} = React.useContext(MenuContext)
@@ -12,6 +11,9 @@ export default function Cart({setShowCart}){
     const [toggleBtn,setToggleBtn] = React.useState(true)
     const [up,setUp] = React.useState(false)
     const [checkout,setCheckout] = React.useState(false)
+    const [rerender, setRerender] = React.useState(false);
+//And whenever you want to re-render, you can do this
+
 
     useEffect(()=>{
      
@@ -50,29 +52,37 @@ export default function Cart({setShowCart}){
     function updateQty(item,value){
         setItemIndex(()=>value)
         //dommi for rerender
-        setUp((prev)=>!prev)
-
+        setUp((true))
+        
     }
 
-
     useEffect(()=>{
-          
+
+        if(up===false){
+            return;
+        }
+
         setCartItems(()=>CartItems.map((item,value)=>{
             if(value === itemIndex){
+                
                 return(
-                    {...item,"quantity": toggleBtn ? item.quantity + 1 : item.quantity-1 }
+                    {...item,"quantity": toggleBtn ? item.quantity + 1 : item.quantity-1}
                     )      
             }else{
                 return (item)
             }
         }))
-        
+
+        setUp(false)
         
     },[up])
+
 
     return(
         <div className="cart-container">
             <div>
+
+                
                 <div className="header-section">
                     <h1>Your Order</h1>
                     <img src={plus} alt="" className="nav-close" onClick={()=>setShowCart(false)}/>
@@ -115,7 +125,8 @@ export default function Cart({setShowCart}){
                     <p>Subtotal</p>
                     <p className="total-price">$ {total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} USD</p>
                 </div>
-                 <p className= {`error-message ${checkout && "hide"}`} >Checkout is currently disabled.</p>   
+                
+                <p className= {`error-message ${checkout && "hide"}`} >Checkout is currently disabled.</p>   
                 <button className="checkout" 
                     onClick={()=>setCheckout(true)}>Continue to Checkout</button>
                 
@@ -124,3 +135,4 @@ export default function Cart({setShowCart}){
         </div>
     )
 }
+
