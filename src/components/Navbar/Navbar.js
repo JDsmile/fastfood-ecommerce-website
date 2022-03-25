@@ -90,7 +90,7 @@ export default function Navbar(){
                 <nav>
                     <div className="mobile-nav-container" style={{backgroundColor: showMenu? "#35B8BE":undefined}}>
                         <img src={bars} alt="mobile navigation toggle" className="mobile-nav-toggle" onClick={()=>setShowMenu(!showMenu)}
-                            style={{backgroundColor: showMenu? "white":undefined}}/>
+                            style={{fill: showMenu? "white":undefined}}/>
                             <ul className="mobile-nav" 
                             style={{display: showMenu? "block" :"none" } }>
                                 
