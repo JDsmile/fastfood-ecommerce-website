@@ -42,7 +42,6 @@ import { NavLink } from 'react-router-dom'
           <Header/>
           <Routes>
 
-    
             <Route path='/' element={<Home/>}></Route>
             <Route path='order' element={<Order />}></Route>
             <Route path='company' element={<Company />}></Route>

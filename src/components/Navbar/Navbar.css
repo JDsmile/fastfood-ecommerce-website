@@ -138,6 +138,7 @@ button {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  cursor: pointer;
 }
 
 .img-container .cart-quantity {
