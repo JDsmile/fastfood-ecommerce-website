@@ -50,14 +50,15 @@ export default function Navbar(){
 
         <div className="nav-wrap">
             
-            {/* close when cliked outside cart section */}
-            <OutsideClickHandler onOutsideClick={() => {
-                setShowCart(false)
-            }}>
-                {showCart && <Cart setShowCart={setShowCart}/>}
-
-            </OutsideClickHandler>
+           
             <div className="nav-container">
+                 {/* close when cliked outside cart section */}
+                <OutsideClickHandler onOutsideClick={() => {
+                    setShowCart(false)
+                }}>
+                    {showCart && <Cart setShowCart={setShowCart} />}
+
+                </OutsideClickHandler>
                 <a href="/">
                     <img className="logo" src={logo} alt="logo image"/>
                 </a>
@@ -81,16 +82,17 @@ export default function Navbar(){
                     </ul>
                 </nav>
 
-                <div className="img-container">
-                    <img src={cart} alt="shopping cart icon" className="cart" onClick={()=>setShowCart(!showCart)}/>
+                <div className="img-container" onClick={()=>{setShowCart(!showCart);setShowMenu(false)}} >
+                    <img src={cart} alt="shopping cart icon" className="cart" />
                     <p className="cart-quantity">{CartItems.length}</p>
                 </div>
                 {/* mobile nav */}
                 <nav>
-                    <div className="mobile-nav-container">
-                        <img src={bars} alt="mobile navigation toggle" className="mobile-nav-toggle" onClick={()=>setShowMenu(!showMenu)}/>
+                    <div className="mobile-nav-container" style={{backgroundColor: showMenu? "#35B8BE":undefined}}>
+                        <img src={bars} alt="mobile navigation toggle" className="mobile-nav-toggle" onClick={()=>setShowMenu(!showMenu)}
+                            style={{backgroundColor: showMenu? "white":undefined}}/>
                             <ul className="mobile-nav" 
-                            style={{display: showMenu? "block" :"none"}}>
+                            style={{display: showMenu? "block" :"none" } }>
                                 
                                 {navLinks.map((link,value)=>{
                                     return(

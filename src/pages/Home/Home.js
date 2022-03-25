@@ -85,11 +85,6 @@ export default function Home(){
                 <h2 className="menu-title">Browse our menu</h2>
                 <p className="menu-description">Use our menu to place an order online, or call our store to palce a pickup order. Fast and fresh food.</p>
 
-                {/* menu goes here later */}
-
-                <button className="to-menu">
-                    <Link to="/company">See Full Menu</Link>
-                </button>
             </div>
 
             <div className="content-section-home flex-container">
