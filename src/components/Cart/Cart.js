@@ -10,17 +10,9 @@ export default function Cart({setShowCart}){
     const [total,setTotal] = React.useState(0)
     const {itemIndex,setItemIndex}= React.useContext(MenuContext)
     const [toggleBtn,setToggleBtn] = React.useState(true)
-    const [up,setUp] = React.useState(0)
+    const [up,setUp] = React.useState(false)
     const [checkout,setCheckout] = React.useState(false)
 
-
-
-
-
-
-    
-
-    
     useEffect(()=>{
      
         setTotal(()=>0)
@@ -58,17 +50,14 @@ export default function Cart({setShowCart}){
     function updateQty(item,value){
         setItemIndex(()=>value)
         //dommi for rerender
-        setUp((prev)=>prev+1)
+        setUp((prev)=>!prev)
 
     }
 
- 
-    
+
     useEffect(()=>{
           
-
         setCartItems(()=>CartItems.map((item,value)=>{
-            
             if(value === itemIndex){
                 return(
                     {...item,"quantity": toggleBtn ? item.quantity + 1 : item.quantity-1 }
@@ -81,12 +70,9 @@ export default function Cart({setShowCart}){
         
     },[up])
 
-
     return(
         <div className="cart-container">
             <div>
-
-                
                 <div className="header-section">
                     <h1>Your Order</h1>
                     <img src={plus} alt="" className="nav-close" onClick={()=>setShowCart(false)}/>
@@ -129,8 +115,7 @@ export default function Cart({setShowCart}){
                     <p>Subtotal</p>
                     <p className="total-price">$ {total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} USD</p>
                 </div>
-                
-                <p className= {`error-message ${checkout && "hide"}`} >Checkout is currently disabled.</p>   
+                 <p className= {`error-message ${checkout && "hide"}`} >Checkout is currently disabled.</p>   
                 <button className="checkout" 
                     onClick={()=>setCheckout(true)}>Continue to Checkout</button>
                 
