@@ -3,24 +3,18 @@ import "../Cart/Cart.css"
 import plus from "../../assets/times-solid.svg"
 import { MenuContext } from "../../Contexts/MenuContext";
 
-
 export default function Cart({setShowCart}){
 
     const {CartItems,setCartItems} = React.useContext(MenuContext)
     const [total,setTotal] = React.useState(0)
     const {itemIndex,setItemIndex}= React.useContext(MenuContext)
     const [toggleBtn,setToggleBtn] = React.useState(true)
-    const [up,setUp] = React.useState(0)
+    const [up,setUp] = React.useState(false)
     const [checkout,setCheckout] = React.useState(false)
+    const [rerender, setRerender] = React.useState(false);
+//And whenever you want to re-render, you can do this
 
 
-
-
-
-
-    
-
-    
     useEffect(()=>{
      
         setTotal(()=>0)
@@ -58,26 +52,28 @@ export default function Cart({setShowCart}){
     function updateQty(item,value){
         setItemIndex(()=>value)
         //dommi for rerender
-        setUp((prev)=>prev+1)
-
+        setUp((true))
+        
     }
 
- 
-    
     useEffect(()=>{
-          
+
+        if(up===false){
+            return;
+        }
 
         setCartItems(()=>CartItems.map((item,value)=>{
-            
             if(value === itemIndex){
+                
                 return(
-                    {...item,"quantity": toggleBtn ? item.quantity + 1 : item.quantity-1 }
+                    {...item,"quantity": toggleBtn ? item.quantity + 1 : item.quantity-1}
                     )      
             }else{
                 return (item)
             }
         }))
-        
+
+        setUp(false)
         
     },[up])
 
@@ -139,3 +135,4 @@ export default function Cart({setShowCart}){
         </div>
     )
 }
+

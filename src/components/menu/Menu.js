@@ -77,8 +77,7 @@ export default function Menu(){
                                 
                                 <div className="sent-to-cart">          
                                     <button className="cart-btn" 
-                                            onClick={()=>sentToCart(item,value)
-                                            }>Add To Cart</button>
+                                            onClick={()=>sentToCart(item,value)}>Add To Cart</button>
 
                                     <Alert variant="outlined" severity={sucess? "success": "error"}
                                     className="alert"
