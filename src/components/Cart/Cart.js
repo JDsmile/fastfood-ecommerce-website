@@ -40,7 +40,7 @@ export default function Cart({setShowCart}){
     function handleRemove(item,value){
         
         //create new list after remove  item
-        setCartItems(CartItems.filter((product,index)=>index!==CartItems.indexOf(item)))
+        CartItems !== null && setCartItems(CartItems.filter((product,index)=>index!==CartItems.indexOf(item)))
 
         //set total back to 0 for recalculation
         setTotal(()=>0)
@@ -83,7 +83,6 @@ export default function Cart({setShowCart}){
         <div className="cart-container">
             <div>
 
-                
                 <div className="header-section">
                     <h1>Your Order</h1>
                     <img src={plus} alt="" className="nav-close" onClick={()=>setShowCart(false)}/>
