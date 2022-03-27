@@ -35,7 +35,7 @@ import { NavLink } from 'react-router-dom'
 
     return (
    
-    <Router>
+    <Router basename="fastfood-ecommerce-website">
     
       <div className="App">
         <MenuContext.Provider value={{CartItems,setCartItems,productQuantity,setProductQuantity,itemIndex,setItemIndex,retriveData}}>
