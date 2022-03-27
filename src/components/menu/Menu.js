@@ -36,6 +36,7 @@ export default function Menu(){
         setdIndex(()=>value)
         setShowMessage(()=>true)
         const currentItem = {"name":item.name,"price":item.price,"img":item.image,"quantity":productQuantity}
+        
         if (CartItems.find(product => product.name === item.name)) {
             setSucess((()=>false))
             

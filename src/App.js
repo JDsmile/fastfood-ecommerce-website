@@ -24,7 +24,7 @@ import { NavLink } from 'react-router-dom'
       return localData && JSON.parse(localData) 
     }
 
-    const [CartItems,setCartItems]=React.useState(retriveData,[])
+    const [CartItems,setCartItems]=React.useState([])
     const [productQuantity,setProductQuantity]= React.useState(1)
     const [itemIndex,setItemIndex] = React.useState()
 
@@ -38,7 +38,7 @@ import { NavLink } from 'react-router-dom'
     <Router basename="fastfood-ecommerce-website">
     
       <div className="App">
-        <MenuContext.Provider value={{CartItems,setCartItems,productQuantity,setProductQuantity,itemIndex,setItemIndex,retriveData}}>
+        <MenuContext.Provider value={{CartItems,setCartItems,productQuantity,setProductQuantity,itemIndex,setItemIndex}}>
           <Header/>
           <Routes>
 
