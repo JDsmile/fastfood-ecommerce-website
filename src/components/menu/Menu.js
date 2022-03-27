@@ -34,7 +34,7 @@ export default function Menu(){
     const sentToCart=(item,value)=>{
         
         setdIndex(()=>value)
-        
+
         setShowMessage(()=>true)
         const currentItem = {"name":item.name,"price":item.price,"img":item.image,"quantity":productQuantity}
 
@@ -55,15 +55,15 @@ export default function Menu(){
          <div className="btn-container">
                 {menuList.map((item,value)=>{
                     return(
-                        <button className={`menu-list-btn ${value===tabIndex ? "active-btn": undefined}`} onClick={()=>handleClick(item,value)}>{item}</button>
+                        <button className={`menu-list-btn ${value===tabIndex ? "active-btn": undefined}`} onClick={()=>handleClick(item,value)} key={value}>{item}</button>
                         )
                     })}
             </div>
-
+            
             <div className="menu-items-container">
                 {menuTab.map((item,value)=>{
                     return(
-                        <div className="menu-item">
+                        <div className="menu-item" key={value}>
                             <div className="item-img">
                                 <img src={item.image} alt="img"  className="product-photo"/>
                             </div>

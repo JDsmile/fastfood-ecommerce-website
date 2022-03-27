@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "../Cart/Cart.css"
 import plus from "../../assets/times-solid.svg"
 import { MenuContext } from "../../Contexts/MenuContext";
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 export default function Cart({setShowCart}){
 
@@ -95,7 +96,7 @@ export default function Cart({setShowCart}){
                      CartItems !== null && 
                         CartItems.map((item,value)=>{
                             return(
-                                <div className="cart-item">
+                                <div className="cart-item" key={value}>
 
                                     <img src={item.img} className="small-img"/>
                                     <div className="product-info">
