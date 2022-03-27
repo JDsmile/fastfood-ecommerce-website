@@ -56,6 +56,7 @@ export default function Cart({setShowCart}){
         
     }
 
+
     useEffect(()=>{
 
         if(up===false){

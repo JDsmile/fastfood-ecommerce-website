@@ -99,8 +99,9 @@ button {
   left: 0;
   width: 100%;
   padding: 10px;
+  padding-top: 1.5em;
   margin-top: 2em;
-  background-color: lightcyan;
+  background-color: white;
   z-index: 5;
   -webkit-animation-name: slideDown;
           animation-name: slideDown;
@@ -116,8 +117,9 @@ button {
 
 .nav-links .mobile-nav-container .mobile-nav li {
   list-style-type: none;
-  font-size: 16px;
-  margin-bottom: 2em;
+  font-size: 18px;
+  margin-bottom: 3em;
+  color: #546285;
 }
 
 .active-menu {
