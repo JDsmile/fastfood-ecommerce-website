@@ -14,7 +14,6 @@ export default function Cart({setShowCart}){
     const [rerender, setRerender] = React.useState(false);
 //And whenever you want to re-render, you can do this
 
-
     useEffect(()=>{
      
         setTotal(()=>0)
@@ -92,32 +91,35 @@ export default function Cart({setShowCart}){
 
                 <div className="cart-items-container">
 
-                    {CartItems.map((item,value)=>{
-                        return(
-                            <div className="cart-item">
+                    {
+                     CartItems !== null && 
+                        CartItems.map((item,value)=>{
+                            return(
+                                <div className="cart-item">
 
-                                <img src={item.img} className="small-img"/>
-                                <div className="product-info">
-                                    <div>
-                                        <p className="product-name">{item.name}</p>
-                                        <p className="product-price">$ {item.price.toFixed(2)} USD</p>
+                                    <img src={item.img} className="small-img"/>
+                                    <div className="product-info">
+                                        <div>
+                                            <p className="product-name">{item.name}</p>
+                                            <p className="product-price">$ {item.price.toFixed(2)} USD</p>
+                                        </div>
+
+                                        <button className="remove-btn" 
+                                            onClick={()=>handleRemove(item,value)}>Remove</button>
                                     </div>
 
-                                    <button className="remove-btn" 
-                                        onClick={()=>handleRemove(item,value)}>Remove</button>
+                                    <div className="qty-section">
+
+                                        <button className="plus qty-btn" onClick={()=>{setToggleBtn(true);updateQty(item,value);}}>+</button>
+                                        
+                                        <h2 >{item.quantity}</h2>
+                                        <button className="minus qty-btn"onClick={()=>{setToggleBtn(false);updateQty(item,value);}}>-</button>
+
+                                    </div>
                                 </div>
-
-                                <div className="qty-section">
-
-                                    <button className="plus qty-btn" onClick={()=>{setToggleBtn(true);updateQty(item,value);}}>+</button>
-                                    
-                                    <h2 >{item.quantity}</h2>
-                                    <button className="minus qty-btn"onClick={()=>{setToggleBtn(false);updateQty(item,value);}}>-</button>
-
-                                </div>
-                            </div>
-                        )
-                    })}
+                            )
+                        })
+                }
                 </div>
             </div>
     

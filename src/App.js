@@ -24,7 +24,7 @@ import { NavLink } from 'react-router-dom'
       return localData && JSON.parse(localData) 
     }
 
-    const [CartItems,setCartItems]=React.useState(retriveData,[])
+    const [CartItems,setCartItems]=React.useState(retriveData||[])
     const [productQuantity,setProductQuantity]= React.useState(1)
     const [itemIndex,setItemIndex] = React.useState()
 
