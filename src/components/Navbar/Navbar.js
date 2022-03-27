@@ -44,6 +44,7 @@ export default function Navbar(){
 
     function checkActive(link){
         setActive(link.name)
+        setShowMenu(false)
     }
    
     return(
