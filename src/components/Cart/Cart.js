@@ -18,6 +18,7 @@ export default function Cart({setShowCart}){
      
         setTotal(()=>0)
 
+        CartItems!==null &&
             CartItems.map((item,value)=>{
 
                 //remove the item with quantity of 0  before calculation
