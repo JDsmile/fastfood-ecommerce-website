@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fastfood-ecommerce-website/static/css/main.7748c3be.css",
-    "main.js": "/fastfood-ecommerce-website/static/js/main.bbd7e766.js",
+    "main.js": "/fastfood-ecommerce-website/static/js/main.821c60d6.js",
     "static/media/co-bg.jpeg": "/fastfood-ecommerce-website/static/media/co-bg.4705df01ba0e2ea37b0f.jpeg",
     "static/media/home-img-8.png": "/fastfood-ecommerce-website/static/media/home-img-8.abb6cd27d2b3dbd1848a.png",
     "static/media/home-img-6.png": "/fastfood-ecommerce-website/static/media/home-img-6.85a611a12cf190525499.png",
@@ -26,10 +26,10 @@
     "static/media/mobile-nav.svg": "/fastfood-ecommerce-website/static/media/mobile-nav.b12c68f040cee72b6bdf3c87185c8e5a.svg",
     "static/media/bg-1.svg": "/fastfood-ecommerce-website/static/media/bg-1.098ccf1b0c8d1f273d24.svg",
     "main.7748c3be.css.map": "/fastfood-ecommerce-website/static/css/main.7748c3be.css.map",
-    "main.bbd7e766.js.map": "/fastfood-ecommerce-website/static/js/main.bbd7e766.js.map"
+    "main.821c60d6.js.map": "/fastfood-ecommerce-website/static/js/main.821c60d6.js.map"
   },
   "entrypoints": [
     "static/css/main.7748c3be.css",
-    "static/js/main.bbd7e766.js"
+    "static/js/main.821c60d6.js"
   ]
 }
