@@ -14,8 +14,6 @@ export default function Cart({setShowCart}){
     const [rerender, setRerender] = React.useState(false);
 //And whenever you want to re-render, you can do this
 
-
-    console.log(CartItems.length)
     useEffect(()=>{
      
         setTotal(()=>0)
@@ -97,7 +95,6 @@ export default function Cart({setShowCart}){
                      CartItems.length>0 && 
                         CartItems.map((item,value)=>{
                             return(
-
                                 <div className="cart-item">
 
                                     <img src={item.img} className="small-img"/>
