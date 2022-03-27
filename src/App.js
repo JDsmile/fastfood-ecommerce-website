@@ -19,26 +19,26 @@ import { NavLink } from 'react-router-dom'
   function App() {
 
     //get cart items from local storage
-    // function retriveData(){
-    //   const localData = localStorage.getItem("cart")
-    //   return localData && JSON.parse(localData) 
-    // }
+    function retriveData(){
+      const localData = localStorage.getItem("cart")
+      return localData && JSON.parse(localData) 
+    }
 
-    const [CartItems,setCartItems]=React.useState([])
+    const [CartItems,setCartItems]=React.useState(retriveData,[])
     const [productQuantity,setProductQuantity]= React.useState(1)
     const [itemIndex,setItemIndex] = React.useState()
 
     //save cart items to localstorage
-    // React.useEffect(()=>{
-    //   localStorage.setItem("cart" , JSON.stringify(CartItems))
-    // },[CartItems])
+    React.useEffect(()=>{
+      localStorage.setItem("cart" , JSON.stringify(CartItems))
+    },[CartItems])
 
     return (
    
     <Router basename="fastfood-ecommerce-website">
     
       <div className="App">
-        <MenuContext.Provider value={{CartItems,setCartItems,productQuantity,setProductQuantity,itemIndex,setItemIndex}}>
+        <MenuContext.Provider value={{CartItems,setCartItems,productQuantity,setProductQuantity,itemIndex,setItemIndex,retriveData}}>
           <Header/>
           <Routes>
 
