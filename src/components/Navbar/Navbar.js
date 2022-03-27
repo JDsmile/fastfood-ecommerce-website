@@ -85,7 +85,7 @@ export default function Navbar(){
 
                 <div className="img-container" onClick={()=>{setShowCart(!showCart);setShowMenu(false)}} >
                     <img src={cart} alt="shopping cart icon" className="cart" />
-                    <p className="cart-quantity">10</p>
+                    {/* <p className="cart-quantity">{CartItems? CartItems.length : 1}</p> */}
                 </div>
                 {/* mobile nav */}
                 <nav>
