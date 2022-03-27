@@ -18,10 +18,10 @@ export default function Footer(){
                <p>Company</p>
 
                <ul>
-                   <li><a href="/">Home</a></li>
-                   <li><a href="/order">Order</a></li>
-                   <li><a href="/faq">FAQ</a></li>
-                   <li><a href="/company">Company</a></li>
+                   <li><a href="/fastfood-ecommerce-website">Home</a></li>
+                   <li><a href="/fastfood-ecommerce-website/order">Order</a></li>
+                   <li><a href="/fastfood-ecommerce-website/faq">FAQ</a></li>
+                   <li><a href="/fastfood-ecommerce-website/company">Company</a></li>
                </ul>
            </div>
         </div>

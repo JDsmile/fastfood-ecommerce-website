@@ -59,7 +59,7 @@ export default function Menu(){
                         )
                     })}
             </div>
-            
+
             <div className="menu-items-container">
                 {menuTab.map((item,value)=>{
                     return(
@@ -75,8 +75,6 @@ export default function Menu(){
                                 </div>
 
                                 <p className="item-description">{item.description}</p>
-
-                                
                                 <div className="sent-to-cart">          
                                     <button className="cart-btn" 
                                             onClick={()=>sentToCart(item,value)}>Add To Cart</button>
