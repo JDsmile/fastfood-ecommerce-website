@@ -19,12 +19,17 @@ import { NavLink } from 'react-router-dom'
   function App() {
 
     //get cart items from local storage
+    //if no localdata set state to empty array
     function retriveData(){
       const localData = localStorage.getItem("cart")
-      return localData && JSON.parse(localData) 
+      if(localData){
+        return localData && JSON.parse(localData) 
+      }else{
+        return []
+      }
     }
 
-    const [CartItems,setCartItems]=React.useState(retriveData||[])
+    const [CartItems,setCartItems]=React.useState(retriveData)
     const [productQuantity,setProductQuantity]= React.useState(1)
     const [itemIndex,setItemIndex] = React.useState()
 

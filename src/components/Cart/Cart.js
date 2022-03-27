@@ -11,7 +11,7 @@ export default function Cart({setShowCart}){
     const [toggleBtn,setToggleBtn] = React.useState(true)
     const [up,setUp] = React.useState(false)
     const [checkout,setCheckout] = React.useState(false)
-    const [rerender, setRerender] = React.useState(false);
+  
 
 
     useEffect(()=>{
