@@ -12,12 +12,13 @@ export default function Cart({setShowCart}){
     const [up,setUp] = React.useState(false)
     const [checkout,setCheckout] = React.useState(false)
     const [rerender, setRerender] = React.useState(false);
-//And whenever you want to re-render, you can do this
+
 
     useEffect(()=>{
      
         setTotal(()=>0)
 
+        CartItems!==null &&
             CartItems.map((item,value)=>{
 
                 //remove the item with quantity of 0  before calculation
