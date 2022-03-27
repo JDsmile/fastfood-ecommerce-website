@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "../Cart/Cart.css"
 import plus from "../../assets/times-solid.svg"
 import { MenuContext } from "../../Contexts/MenuContext";
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 export default function Cart({setShowCart}){
 
@@ -11,7 +12,7 @@ export default function Cart({setShowCart}){
     const [toggleBtn,setToggleBtn] = React.useState(true)
     const [up,setUp] = React.useState(false)
     const [checkout,setCheckout] = React.useState(false)
-    const [rerender, setRerender] = React.useState(false);
+  
 
 
     useEffect(()=>{
@@ -40,7 +41,7 @@ export default function Cart({setShowCart}){
     function handleRemove(item,value){
         
         //create new list after remove  item
-        setCartItems(CartItems.filter((product,index)=>index!==CartItems.indexOf(item)))
+        CartItems !== null && setCartItems(CartItems.filter((product,index)=>index!==CartItems.indexOf(item)))
 
         //set total back to 0 for recalculation
         setTotal(()=>0)
@@ -83,7 +84,6 @@ export default function Cart({setShowCart}){
         <div className="cart-container">
             <div>
 
-                
                 <div className="header-section">
                     <h1>Your Order</h1>
                     <img src={plus} alt="" className="nav-close" onClick={()=>setShowCart(false)}/>
@@ -96,7 +96,7 @@ export default function Cart({setShowCart}){
                      CartItems !== null && 
                         CartItems.map((item,value)=>{
                             return(
-                                <div className="cart-item">
+                                <div className="cart-item" key={value}>
 
                                     <img src={item.img} className="small-img"/>
                                     <div className="product-info">
