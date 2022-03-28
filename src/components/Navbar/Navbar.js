@@ -60,7 +60,7 @@ export default function Navbar(){
                     {showCart && <Cart setShowCart={setShowCart} />}
 
                 </OutsideClickHandler>
-                <a href="/">
+                <a href="/fastfood-ecommerce-website">
                     <img className="logo" src={logo} alt="logo image"/>
                 </a>
             </div>
