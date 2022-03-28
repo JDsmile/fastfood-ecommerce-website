@@ -137,10 +137,11 @@
     }
     .qty-btn{
         border: none;
-        font-size: 22px;
+        font-size: 1.3rem;
         background-color: $brand;
         border-radius: 5px;
         color: white;
+        border: 2px solid red;
         
     }
 }
